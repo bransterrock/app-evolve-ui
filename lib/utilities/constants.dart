@@ -12,3 +12,6 @@ const MaterialColor SUPER_DARK_BLUE = MaterialColor(0xff2C2D35, <int, Color>{
   800: Color(0xff2C2D35),
   900: Color(0xff2C2D35),
 });
+
+const String avatarImage = 'assets/images/avatar_image.png';
+const String avatarImageSvg = 'assets/images/avatar_image_svg.svg';

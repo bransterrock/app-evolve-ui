@@ -1,3 +1,4 @@
+import 'package:app_evolve_ui/pages/mobile_ui.dart';
 import 'package:flutter/material.dart';
 
 class OrientationCondition extends StatefulWidget {
@@ -8,11 +9,8 @@ class OrientationCondition extends StatefulWidget {
 class _OrientationConditionState extends State<OrientationCondition> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Orders'),
-      ),
-      body: Center(),
-    );
+    return OrientationBuilder(
+        builder: (context, orientation) =>
+            orientation == Orientation.portrait ? MobileUI() : Text(''));
   }
 }
