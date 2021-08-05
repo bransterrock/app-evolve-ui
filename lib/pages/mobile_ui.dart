@@ -4,6 +4,7 @@ import 'package:app_evolve_ui/widgets/filter_sort_button.dart';
 import 'package:app_evolve_ui/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:app_evolve_ui/widgets/order_details_card.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 
 class MobileUI extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MobileUIState extends State<MobileUI> {
   String filterImagePath = '';
   String searchIconPath = '';
   String sortIconPath = '';
-  List<bool> filterTapBooleans = [false, false, false, false, false, false];
+  List<bool> filterTapBooleans = [true, false, false, false, false, false];
   @override
   void initState() {
     super.initState();
@@ -26,6 +27,14 @@ class _MobileUIState extends State<MobileUI> {
     filterImagePath = constants.filterLogo;
     searchIconPath = constants.searchIcon;
     sortIconPath = constants.sortIcon;
+  }
+
+  isButtonTapped(int index) {
+    // ignore: unused_local_variable
+    for (int taps = 0; taps < filterTapBooleans.length; ++taps) {
+      filterTapBooleans[taps] = false;
+    }
+    filterTapBooleans[index] = true;
   }
 
   @override
@@ -63,9 +72,17 @@ class _MobileUIState extends State<MobileUI> {
               radius: 15,
               child: CircleAvatar(
                 radius: 13.5,
-                child: ClipOval(
-                  child: SvgPicture.asset(image),
-                ),
+                child: Stack(alignment: Alignment.bottomRight, children: [
+                  ClipOval(
+                    child: SvgPicture.asset(image),
+                  ),
+                  Container(
+                    height: 6.7,
+                    width: 6.7,
+                    decoration: BoxDecoration(
+                        color: constants.TURQUOISE, shape: BoxShape.circle),
+                  ),
+                ]),
               ),
             )),
           )
@@ -113,16 +130,12 @@ class _MobileUIState extends State<MobileUI> {
                           }));
                 }),
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
+            child: OrderDetailsCard(),
+          ),
         ],
       ),
     );
-  }
-
-  isButtonTapped(int index) {
-    // ignore: unused_local_variable
-    for (int taps = 0; taps < filterTapBooleans.length; ++taps) {
-      filterTapBooleans[taps] = false;
-    }
-    filterTapBooleans[index] = true;
   }
 }
