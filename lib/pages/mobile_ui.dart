@@ -71,25 +71,26 @@ class _MobileUIState extends State<MobileUI> {
       ),
       body: Column(
         children: [
-          Container(
-            child: Column(
-              children: [
-                SearchBar(searchIconPath),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      child: FilterSearchWidget(
-                          imagePath: filterImagePath, btnText: 'Filter'),
-                    ),
-                    Flexible(
-                      child: FilterSearchWidget(
-                          imagePath: sortIconPath, btnText: 'Sort'),
-                    ),
-                  ],
-                )
-              ],
+          SearchBar(searchIconPath),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Flexible(
+                child: FilterSearchWidget(
+                    imagePath: filterImagePath, btnText: 'Filter'),
+              ),
+              Flexible(
+                child: FilterSearchWidget(
+                    imagePath: sortIconPath, btnText: 'Sort'),
+              ),
+            ],
+          ),
+          Opacity(
+            opacity: 0.25,
+            child: Divider(
+              color: constants.MEDIUM_GREY,
+              thickness: 1,
             ),
           ),
         ],
