@@ -1,3 +1,4 @@
+import 'package:app_evolve_ui/models/order_details.dart';
 import 'package:app_evolve_ui/utilities/helper.dart';
 import 'package:app_evolve_ui/widgets/filter_header_button.dart';
 import 'package:app_evolve_ui/widgets/filter_sort_button.dart';
@@ -132,7 +133,10 @@ class _MobileUIState extends State<MobileUI> {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
-            child: OrderDetailsCard(),
+            child: OrderDetailsCard(
+              orderID: '#13702574',
+              orderStatus: OrderStatus.PREPARING,
+            ),
           ),
         ],
       ),

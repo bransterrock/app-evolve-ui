@@ -17,6 +17,14 @@ const Color SCAFFOLD_BACKGROUND = Color(0xffE5E5E5);
 const Color MEDIUM_GREY = Color(0xff8C8A98);
 const Color TURQUOISE = Color(0xff55A3AE);
 
+const Color PREPARING_TEXT_COLOR = Color(0xFF9E0E);
+
+const Color PREPARING_ICON_COLOR = Color(0xffFFB546);
+const Color SENT_ICON_COLOR = Color(0xff6FA2CF);
+const Color CANCELLED_ICON_COLOR = Color(0xffFF5246);
+const Color DELIVERED_ICON_COLOR = Color(0xff55A3AE);
+const Color RETURNED_ICON_COLOR = Color(0xff466CA2);
+
 //Image Path Strings
 const String imagePath = 'assets/images';
 const String avatarImage = '$imagePath/avatar_image.png';
@@ -28,7 +36,10 @@ const String iconPath = 'assets/icons';
 const String filterLogo = '$iconPath/filter_icon.svg';
 const String searchIcon = '$iconPath/magnifying_glass.svg';
 const String sortIcon = '$iconPath/sort.svg';
+const String shoppingBagIcon = '$iconPath/shopping_bag_icon.svg';
 
+
+//Filter Header Widget Values
 const List<String> filterTitles = [
   'All Orders',
   'Preparing',
