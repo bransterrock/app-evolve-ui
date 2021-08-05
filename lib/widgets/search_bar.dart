@@ -19,7 +19,7 @@ class SearchBar extends StatelessWidget {
         child: TextField(
           decoration: InputDecoration(
               border: InputBorder.none,
-              icon: SvgPicture.asset(iconPathName), //Icon(Icons.search_rounded),
+              icon: SvgPicture.asset(iconPathName),
               labelText: 'Search by any parameter',
               labelStyle: Helper.defaultTextStyle(
                   fontSize: 14,
