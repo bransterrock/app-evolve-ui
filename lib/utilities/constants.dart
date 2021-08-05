@@ -16,7 +16,14 @@ const MaterialColor SUPER_DARK_BLUE = MaterialColor(0xff2C2D35, <int, Color>{
 const Color SCAFFOLD_BACKGROUND = Color(0xffE5E5E5);
 const Color MEDIUM_GREY = Color(0xff8C8A98);
 
-//Path Strings
-const String avatarImage = 'assets/images/avatar_image.png';
-const String avatarImageSvg = 'assets/images/avatar_image_svg.svg';
-const String appEvolveLogo = 'assets/images/appevolve_logo.svg';
+//Image Path Strings
+const String imagePath = 'assets/images';
+const String avatarImage = '$imagePath/avatar_image.png';
+const String avatarImageSvg = '$imagePath/avatar_image_svg.svg';
+const String appEvolveLogo = '$imagePath/appevolve_logo.svg';
+
+//Icon Path Strings
+const String iconPath = 'assets/icons';
+const String filterLogo = '$iconPath/filter_icon.svg';
+const String searchIcon = '$iconPath/magnifying_glass.svg';
+const String sortIcon = '$iconPath/sort.svg';

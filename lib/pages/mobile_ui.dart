@@ -1,4 +1,5 @@
 import 'package:app_evolve_ui/utilities/helper.dart';
+import 'package:app_evolve_ui/widgets/filter_search.dart';
 import 'package:app_evolve_ui/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,11 +13,17 @@ class MobileUI extends StatefulWidget {
 class _MobileUIState extends State<MobileUI> {
   String image = '';
   String logoPath = '';
+  String filterImagePath = '';
+  String searchIconPath = '';
+  String sortIconPath = '';
   @override
   void initState() {
     super.initState();
     image = constants.avatarImageSvg;
     logoPath = constants.appEvolveLogo;
+    filterImagePath = constants.filterLogo;
+    searchIconPath = constants.searchIcon;
+    sortIconPath = constants.sortIcon;
   }
 
   @override
@@ -43,7 +50,7 @@ class _MobileUIState extends State<MobileUI> {
         centerTitle: true,
         title: Text(
           'Orders',
-          style: Helper.defaultTextStyle(),
+          style: Helper.defaultTextStyle(color: Colors.white),
         ),
         actions: [
           Padding(
@@ -67,7 +74,21 @@ class _MobileUIState extends State<MobileUI> {
           Container(
             child: Column(
               children: [
-               SearchBar()
+                SearchBar(searchIconPath),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: FilterSearchWidget(
+                          imagePath: filterImagePath, btnText: 'Filter'),
+                    ),
+                    Flexible(
+                      child: FilterSearchWidget(
+                          imagePath: sortIconPath, btnText: 'Sort'),
+                    ),
+                  ],
+                )
               ],
             ),
           ),

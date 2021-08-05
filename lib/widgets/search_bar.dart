@@ -1,7 +1,12 @@
 import 'package:app_evolve_ui/utilities/helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
+// ignore: must_be_immutable
 class SearchBar extends StatelessWidget {
+  String iconPathName;
+  SearchBar(this.iconPathName);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,7 +19,7 @@ class SearchBar extends StatelessWidget {
         child: TextField(
           decoration: InputDecoration(
               border: InputBorder.none,
-              icon: Icon(Icons.search_rounded),
+              icon: SvgPicture.asset(iconPathName), //Icon(Icons.search_rounded),
               labelText: 'Search by any parameter',
               labelStyle: Helper.defaultTextStyle(
                   fontSize: 14,
