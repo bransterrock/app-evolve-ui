@@ -3,7 +3,7 @@ class OrderDetails{
   OrderStatus orderStatus = OrderStatus.CANCELLED;
   String orderDate = '';
   String time = '';
-  String orderLocation = '';
+  String deliveryLocation = '';
   String clientName = '';
   String clientEmail = '';
   String deliveryCompany = '';

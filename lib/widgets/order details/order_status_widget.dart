@@ -13,7 +13,9 @@ class OrderStatusWidget extends StatelessWidget {
       padding: const EdgeInsets.only(right: 8),
       child: Container(
         height: 30,
-        width: 88,
+        width: orderStatus == OrderStatus.SENT ? 58 : 88,
+        // height: 30,
+        // width: 88,
         child: Center(
           child: Text(
             Helper.getBtnName(orderStatus),
@@ -29,5 +31,4 @@ class OrderStatusWidget extends StatelessWidget {
       ),
     );
   }
-
 }

@@ -25,6 +25,8 @@ const Color CANCELLED_ICON_COLOR = Color(0xffFF5246);
 const Color DELIVERED_ICON_COLOR = Color(0xff55A3AE);
 const Color RETURNED_ICON_COLOR = Color(0xff466CA2);
 
+const Color DELIVERY_CARD_BACKGROUND = Color(0xffF8F8F9);
+
 //Image Path Strings
 const String imagePath = 'assets/images';
 const String avatarImage = '$imagePath/avatar_image.png';

@@ -5,7 +5,7 @@ import 'package:app_evolve_ui/widgets/filter_sort_button.dart';
 import 'package:app_evolve_ui/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:app_evolve_ui/widgets/order_details_card.dart';
+import 'package:app_evolve_ui/widgets/order%20details/order_details_card.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 
 class MobileUI extends StatefulWidget {
@@ -136,6 +136,19 @@ class _MobileUIState extends State<MobileUI> {
             child: OrderDetailsCard(
               orderID: '#13702574',
               orderStatus: OrderStatus.PREPARING,
+              orderDate: '04/10/2021',
+              time: '02:39',
+              deliveryLocation: 'Colorado Springs',
+              clientName: 'Matthew Collins',
+              clientEmail: 'c.matthews@outlook.com',
+              deliveryCompany: 'DHL',
+              trackingCode: '705-610844',
+              products: [
+                'Hourglass Wallet on Chain, Void',
+                'Butterfly Sunglasses'
+              ],
+              price: '\$2,198.03',
+              paymentMethod: 'Credit Card, **** 9171',
             ),
           ),
         ],
