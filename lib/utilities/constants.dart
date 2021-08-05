@@ -15,6 +15,7 @@ const MaterialColor SUPER_DARK_BLUE = MaterialColor(0xff2C2D35, <int, Color>{
 });
 const Color SCAFFOLD_BACKGROUND = Color(0xffE5E5E5);
 const Color MEDIUM_GREY = Color(0xff8C8A98);
+const Color TURQUOISE = Color(0xff55A3AE);
 
 //Image Path Strings
 const String imagePath = 'assets/images';
@@ -27,3 +28,13 @@ const String iconPath = 'assets/icons';
 const String filterLogo = '$iconPath/filter_icon.svg';
 const String searchIcon = '$iconPath/magnifying_glass.svg';
 const String sortIcon = '$iconPath/sort.svg';
+
+const List<String> filterTitles = [
+  'All Orders',
+  'Preparing',
+  'Sent',
+  'Returned',
+  'Cancelled',
+  'Delivered',
+];
+const List<int> filternumberValues = [294, 12, 77, 14, 16, 134];

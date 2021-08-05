@@ -1,5 +1,6 @@
 import 'package:app_evolve_ui/utilities/helper.dart';
-import 'package:app_evolve_ui/widgets/filter_search.dart';
+import 'package:app_evolve_ui/widgets/filter_header_button.dart';
+import 'package:app_evolve_ui/widgets/filter_sort_button.dart';
 import 'package:app_evolve_ui/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,6 +17,7 @@ class _MobileUIState extends State<MobileUI> {
   String filterImagePath = '';
   String searchIconPath = '';
   String sortIconPath = '';
+  List<bool> filterTapBooleans = [false, false, false, false, false, false];
   @override
   void initState() {
     super.initState();
@@ -77,24 +79,50 @@ class _MobileUIState extends State<MobileUI> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Flexible(
-                child: FilterSearchWidget(
+                child: FilterSortWidget(
                     imagePath: filterImagePath, btnText: 'Filter'),
               ),
               Flexible(
-                child: FilterSearchWidget(
-                    imagePath: sortIconPath, btnText: 'Sort'),
+                child:
+                    FilterSortWidget(imagePath: sortIconPath, btnText: 'Sort'),
               ),
             ],
           ),
-          Opacity(
-            opacity: 0.25,
-            child: Divider(
-              color: constants.MEDIUM_GREY,
-              thickness: 1,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: Opacity(
+              opacity: 0.25,
+              child: Divider(
+                color: constants.MEDIUM_GREY,
+                thickness: 1,
+              ),
             ),
+          ),
+          Container(
+            height: 40,
+            child: ListView.builder(
+                itemCount: constants.filterTitles.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return FilterHeader(
+                      title: constants.filterTitles[index],
+                      numberValue: constants.filternumberValues[index],
+                      isTapped: filterTapBooleans[index],
+                      onTap: () => setState(() {
+                            isButtonTapped(index);
+                          }));
+                }),
           ),
         ],
       ),
     );
+  }
+
+  isButtonTapped(int index) {
+    // ignore: unused_local_variable
+    for (int taps = 0; taps < filterTapBooleans.length; ++taps) {
+      filterTapBooleans[taps] = false;
+    }
+    filterTapBooleans[index] = true;
   }
 }

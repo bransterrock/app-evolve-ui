@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
-class FilterSearchWidget extends StatelessWidget {
+class FilterSortWidget extends StatelessWidget {
   String imagePath;
   String btnText;
-  FilterSearchWidget({
+  FilterSortWidget({
     required this.imagePath,
     required this.btnText,
   });
@@ -14,7 +14,7 @@ class FilterSearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
         decoration: BoxDecoration(
