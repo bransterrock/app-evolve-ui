@@ -16,6 +16,16 @@ class Helper {
         color: color);
   }
 
+  static List<OrderDetails> searchFunction(String text, List<OrderDetails> oldOrderDetails){
+    List<OrderDetails> newOrderDetails = [];
+    for(var orderDetail in oldOrderDetails){
+      if(orderDetail.orderId.contains(text)){
+        newOrderDetails.add(orderDetail);
+      }
+    }
+    return newOrderDetails;
+  }
+
   static String getBtnName(OrderStatus orderStatus) {
     String value = '';
     switch (orderStatus) {
@@ -80,7 +90,9 @@ class Helper {
         }
         break;
       default:
-        {}
+        {
+          colorValue = MEDIUM_GREY;
+        }
         break;
     }
     return colorValue;
@@ -139,6 +151,36 @@ class Helper {
       }
       return newOrderDetails;
     }
+  }
+
+  static List<OrderDetails> sortFunction(List<OrderDetails> oldOrderDetails){
+    List<OrderDetails> newOrderDetails = [];
+    for(var orderDetail in oldOrderDetails){
+      if(orderDetail.orderStatus == OrderStatus.PREPARING){
+        newOrderDetails.add(orderDetail);
+      }
+    }
+     for(var orderDetail in oldOrderDetails){
+      if(orderDetail.orderStatus == OrderStatus.SENT){
+        newOrderDetails.add(orderDetail);
+      }
+    }
+     for(var orderDetail in oldOrderDetails){
+      if(orderDetail.orderStatus == OrderStatus.RETURNED){
+        newOrderDetails.add(orderDetail);
+      }
+    }
+     for(var orderDetail in oldOrderDetails){
+      if(orderDetail.orderStatus == OrderStatus.CANCELLED){
+        newOrderDetails.add(orderDetail);
+      }
+    }
+     for(var orderDetail in oldOrderDetails){
+      if(orderDetail.orderStatus == OrderStatus.DELIVERED){
+        newOrderDetails.add(orderDetail);
+      }
+    }
+    return newOrderDetails;
   }
 
   static List<OrderDetails> loadOrderDetails() {

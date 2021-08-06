@@ -1,5 +1,6 @@
 import 'package:app_evolve_ui/models/order_details.dart';
 import 'package:app_evolve_ui/utilities/helper.dart';
+import 'package:app_evolve_ui/widgets/dialog/filter_dialog.dart';
 import 'package:app_evolve_ui/widgets/filter_header_button.dart';
 import 'package:app_evolve_ui/widgets/filter_sort_button.dart';
 import 'package:app_evolve_ui/widgets/search_bar.dart';
@@ -21,6 +22,7 @@ class _MobileUIState extends State<MobileUI> {
   String sortIconPath = '';
   List<OrderDetails> orderDetails = [];
   OrderStatus orderStatus = OrderStatus.PREPARING;
+  ScrollController controller = ScrollController();
   List<bool> filterTapBooleans = [true, false, false, false, false, false];
   @override
   void initState() {
@@ -33,12 +35,17 @@ class _MobileUIState extends State<MobileUI> {
     orderDetails = Helper.loadOrderDetails();
   }
 
-  isButtonTapped(int index) {
+  isButtonTapped(int index, [bool sortWasTapped = false]) {
     // ignore: unused_local_variable
     for (int taps = 0; taps < filterTapBooleans.length; ++taps) {
       filterTapBooleans[taps] = false;
     }
     filterTapBooleans[index] = true;
+    if (sortWasTapped) {
+      for (int taps = 0; taps < filterTapBooleans.length; ++taps) {
+        filterTapBooleans[taps] = false;
+      }
+    }
     orderStatus = Helper.setOrderStatus(index);
     orderDetails = Helper.loadOrderDetails();
     orderDetails = Helper.filterFunction(orderStatus, orderDetails);
@@ -94,18 +101,39 @@ class _MobileUIState extends State<MobileUI> {
       ),
       body: Column(
         children: [
-          SearchBar(searchIconPath),
+          SearchBar(searchIconPath, onTap: (text) {
+            setState(() {
+              orderDetails = Helper.loadOrderDetails();
+              orderDetails = Helper.searchFunction(text, orderDetails);
+            });
+          }),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Flexible(
                 child: FilterSortWidget(
-                    imagePath: filterImagePath, btnText: 'Filter'),
+                  imagePath: filterImagePath,
+                  btnText: 'Filter',
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) =>
+                            FilterDialog(orderStatus: orderStatus));
+                  },
+                ),
               ),
               Flexible(
-                child:
-                    FilterSortWidget(imagePath: sortIconPath, btnText: 'Sort'),
+                child: FilterSortWidget(
+                    imagePath: sortIconPath,
+                    btnText: 'Sort',
+                    onTap: () {
+                      setState(() {
+                        isButtonTapped(0, true);
+                        orderDetails = Helper.sortFunction(orderDetails);
+                        controller.jumpTo(0);
+                      });
+                    }),
               ),
             ],
           ),
@@ -124,6 +152,7 @@ class _MobileUIState extends State<MobileUI> {
             child: ListView.builder(
                 itemCount: constants.filterTitles.length,
                 scrollDirection: Axis.horizontal,
+                controller: controller,
                 itemBuilder: (context, index) {
                   return FilterHeader(
                       title: constants.filterTitles[index],
@@ -131,6 +160,7 @@ class _MobileUIState extends State<MobileUI> {
                       isTapped: filterTapBooleans[index],
                       onTap: () => setState(() {
                             isButtonTapped(index);
+                            controller.jumpTo(0);
                           }));
                 }),
           ),
@@ -138,6 +168,7 @@ class _MobileUIState extends State<MobileUI> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
               child: ListView.builder(
+                controller: controller,
                 itemCount: orderDetails.length,
                 itemBuilder: (context, index) => OrderDetailsCard(
                   orderId: orderDetails[index].orderId,

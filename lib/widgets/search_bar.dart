@@ -5,7 +5,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 // ignore: must_be_immutable
 class SearchBar extends StatelessWidget {
   String iconPathName;
-  SearchBar(this.iconPathName);
+  TextEditingController controller = TextEditingController();
+  Function onTap;
+  SearchBar(this.iconPathName, {required this.onTap(String text)});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +19,8 @@ class SearchBar extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(4)),
         child: TextField(
+          controller: controller,
+          keyboardType: TextInputType.text,
           decoration: InputDecoration(
               border: InputBorder.none,
               icon: SvgPicture.asset(iconPathName),
@@ -28,6 +32,9 @@ class SearchBar extends StatelessWidget {
               floatingLabelBehavior: FloatingLabelBehavior.never,
               isDense: true,
               contentPadding: const EdgeInsets.only(bottom: 5)),
+          onSubmitted: (text) {
+            this.onTap(text);
+          },
         ),
       ),
     );
