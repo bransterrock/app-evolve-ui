@@ -19,7 +19,7 @@ class Helper {
   static List<OrderDetails> searchFunction(String text, List<OrderDetails> oldOrderDetails){
     List<OrderDetails> newOrderDetails = [];
     for(var orderDetail in oldOrderDetails){
-      if(orderDetail.orderId.contains(text)){
+      if(orderDetail.orderId!.contains(text)){
         newOrderDetails.add(orderDetail);
       }
     }

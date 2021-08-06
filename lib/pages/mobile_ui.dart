@@ -107,54 +107,60 @@ class _MobileUIState extends State<MobileUI> {
               orderDetails = Helper.searchFunction(text, orderDetails);
             });
           }),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Flexible(
-                child: FilterSortWidget(
-                  imagePath: filterImagePath,
-                  btnText: 'Filter',
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) =>
-                            FilterDialog(orderStatus: orderStatus));
-                  },
-                ),
-              ),
-              Flexible(
-                child: FilterSortWidget(
-                    imagePath: sortIconPath,
-                    btnText: 'Sort',
-                    onTap: () {
-                      setState(() {
-                        isButtonTapped(0, true);
-                        orderDetails = Helper.sortFunction(orderDetails);
-                        controller.jumpTo(0);
-                      });
-                    }),
-              ),
-            ],
-          ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 16),
-            child: Opacity(
-              opacity: 0.25,
-              child: Divider(
-                color: constants.MEDIUM_GREY,
-                thickness: 1,
-              ),
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: FilterSortWidget(
+                    imagePath: filterImagePath,
+                    btnText: 'Filters',
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) =>
+                              FilterDialog(orderStatus: orderStatus));
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: 16,
+                ),
+                Flexible(
+                  child: FilterSortWidget(
+                      imagePath: sortIconPath,
+                      btnText: 'Sort',
+                      onTap: () {
+                        setState(() {
+                          isButtonTapped(0, true);
+                          orderDetails = Helper.sortFunction(orderDetails);
+                          controller.jumpTo(0);
+                        });
+                      }),
+                ),
+              ],
             ),
           ),
+          Opacity(
+            opacity: 0.25,
+            child: Divider(
+              color: constants.MEDIUM_GREY,
+              height: 1,
+              thickness: 1,
+            ),
+          ),
+          SizedBox(
+            height: 16,
+          ),
           Container(
-            height: 40,
+            height: 30,
             child: ListView.builder(
                 itemCount: constants.filterTitles.length,
                 scrollDirection: Axis.horizontal,
-                controller: controller,
                 itemBuilder: (context, index) {
                   return FilterHeader(
+                      index: index,
                       title: constants.filterTitles[index],
                       numberValue: constants.filternumberValues[index],
                       isTapped: filterTapBooleans[index],
@@ -166,7 +172,7 @@ class _MobileUIState extends State<MobileUI> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
               child: ListView.builder(
                 controller: controller,
                 itemCount: orderDetails.length,

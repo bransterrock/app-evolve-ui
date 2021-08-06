@@ -7,10 +7,12 @@ class FilterHeader extends StatefulWidget {
   String title;
   int numberValue;
   bool isTapped;
+  int index;
   Function onTap;
   FilterHeader(
       {required this.title,
       required this.numberValue,
+      required this.index,
       required this.isTapped,
       required this.onTap});
 
@@ -22,8 +24,9 @@ class _FilterHeaderState extends State<FilterHeader> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8),
+      padding: EdgeInsets.only(left: widget.index == 0 ? 16 : 8),
       child: InkWell(
+        borderRadius: BorderRadius.circular(4),
         splashColor: constants.TURQUOISE,
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
@@ -57,7 +60,7 @@ class _FilterHeaderState extends State<FilterHeader> {
                 child: Text(
                   widget.numberValue.toString(),
                   style: Helper.defaultTextStyle(
-                      fontSize: 10,
+                      fontSize: 8,
                       fontWeight: FontWeight.w700,
                       color: Colors.white),
                 ),
