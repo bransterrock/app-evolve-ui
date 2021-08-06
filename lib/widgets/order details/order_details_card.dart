@@ -8,7 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
 class OrderDetailsCard extends StatelessWidget {
-  String orderID = '';
+  String orderId = '';
   OrderStatus orderStatus = OrderStatus.CANCELLED;
   String orderDate = '';
   String time = '';
@@ -22,7 +22,7 @@ class OrderDetailsCard extends StatelessWidget {
   String paymentMethod = '';
 
   OrderDetailsCard(
-      {required this.orderID,
+      {required this.orderId,
       required this.orderStatus,
       required this.orderDate,
       required this.time,
@@ -68,7 +68,7 @@ class OrderDetailsCard extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 8),
-                    Text(orderID,
+                    Text(orderId,
                         style: Helper.defaultTextStyle(
                             color: constants.SUPER_DARK_BLUE,
                             fontSize: 14,

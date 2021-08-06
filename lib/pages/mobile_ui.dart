@@ -19,6 +19,7 @@ class _MobileUIState extends State<MobileUI> {
   String filterImagePath = '';
   String searchIconPath = '';
   String sortIconPath = '';
+  List<OrderDetails> orderDetails = [];
   List<bool> filterTapBooleans = [true, false, false, false, false, false];
   @override
   void initState() {
@@ -28,6 +29,7 @@ class _MobileUIState extends State<MobileUI> {
     filterImagePath = constants.filterLogo;
     searchIconPath = constants.searchIcon;
     sortIconPath = constants.sortIcon;
+    orderDetails = Helper.loadOrderDetails();
   }
 
   isButtonTapped(int index) {
@@ -45,20 +47,15 @@ class _MobileUIState extends State<MobileUI> {
       drawer: Drawer(
         child: Container(
           color: constants.SUPER_DARK_BLUE,
-          child: ListView(
-            children: [
-              DrawerHeader(
-                child: SvgPicture.asset(
-                  logoPath,
-                  fit: BoxFit.scaleDown,
-                ),
-              )
-            ],
+          child: DrawerHeader(
+            child: SvgPicture.asset(
+              logoPath,
+              fit: BoxFit.scaleDown,
+            ),
           ),
         ),
       ),
       appBar: AppBar(
-        //leading: Icon(Icons.menu),
         centerTitle: true,
         title: Text(
           'Orders',
@@ -131,24 +128,26 @@ class _MobileUIState extends State<MobileUI> {
                           }));
                 }),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
-            child: OrderDetailsCard(
-              orderID: '#13702574',
-              orderStatus: OrderStatus.PREPARING,
-              orderDate: '04/10/2021',
-              time: '02:39',
-              deliveryLocation: 'Colorado Springs',
-              clientName: 'Matthew Collins',
-              clientEmail: 'c.matthews@outlook.com',
-              deliveryCompany: 'DHL',
-              trackingCode: '705-610844',
-              products: [
-                'Hourglass Wallet on Chain, Void',
-                'Butterfly Sunglasses'
-              ],
-              price: '\$2,198.03',
-              paymentMethod: 'Credit Card, **** 9171',
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
+              child: ListView.builder(
+                itemCount: orderDetails.length,
+                itemBuilder: (context, index) => OrderDetailsCard(
+                  orderId: orderDetails[index].orderId,
+                  orderStatus: orderDetails[index].orderStatus,
+                  orderDate: orderDetails[index].orderDate,
+                  time: orderDetails[index].time,
+                  deliveryLocation: orderDetails[index].deliveryLocation,
+                  clientName: orderDetails[index].clientName,
+                  clientEmail: orderDetails[index].clientEmail,
+                  deliveryCompany: orderDetails[index].deliveryCompany,
+                  trackingCode: orderDetails[index].trackingCode,
+                  products: orderDetails[index].products,
+                  price: orderDetails[index].price,
+                  paymentMethod: orderDetails[index].paymentMethod,
+                ),
+              ),
             ),
           ),
         ],

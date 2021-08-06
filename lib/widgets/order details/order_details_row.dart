@@ -30,6 +30,7 @@ class OrderDetailsRow extends StatelessWidget {
             children: [
               Text(
                 leadingText,
+                
                 textAlign: TextAlign.left,
                 style: Helper.defaultTextStyle(
                     fontWeight: FontWeight.w400, fontSize: 12),
@@ -42,6 +43,7 @@ class OrderDetailsRow extends StatelessWidget {
                     fontWeight: FontWeight.w400, fontSize: 12),
                 softWrap: true,
                 maxLines: 2,
+
               ),
             ],
           ),
