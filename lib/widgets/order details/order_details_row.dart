@@ -26,21 +26,25 @@ class OrderDetailsRow extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                leadingText,
-                textAlign: TextAlign.left,
-                style: Helper.defaultTextStyle(
-                    fontWeight: FontWeight.w400, fontSize: 12),
+              Flexible(
+                child: Text(
+                  leadingText,
+                  textAlign: TextAlign.left,
+                  style: Helper.defaultTextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 12),
+                ),
               ),
-              Text(
-                trailingText,
-                textAlign: TextAlign.right,
-                style: Helper.defaultTextStyle(
-                    color: textColor,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12),
-                softWrap: true,
-                maxLines: 2,
+              Flexible(
+                child: Text(
+                  trailingText,
+                  textAlign: TextAlign.right,
+                  style: Helper.defaultTextStyle(
+                      color: textColor,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12),
+                  softWrap: true,
+                  maxLines: 2,
+                ),
               ),
             ],
           ),

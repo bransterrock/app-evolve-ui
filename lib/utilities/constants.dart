@@ -17,7 +17,7 @@ const Color SCAFFOLD_BACKGROUND = Color(0xffE5E5E5);
 const Color MEDIUM_GREY = Color(0xff8C8A98);
 const Color TURQUOISE = Color(0xff55A3AE);
 
-const Color PREPARING_TEXT_COLOR = Color(0xFF9E0E);
+const Color PREPARING_TEXT_COLOR = Color(0xffff9E0E);
 
 const Color PREPARING_ICON_COLOR = Color(0xffFFB546);
 const Color SENT_ICON_COLOR = Color(0xff6FA2CF);

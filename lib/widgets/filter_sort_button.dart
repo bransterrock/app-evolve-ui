@@ -21,7 +21,7 @@ class _FilterSortWidgetState extends State<FilterSortWidget> {
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       child: InkWell(
         focusColor: Colors.amber,
-           child: Container(
+        child: Container(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(4)),
@@ -30,9 +30,12 @@ class _FilterSortWidgetState extends State<FilterSortWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SvgPicture.asset(widget.imagePath),
-              Text(widget.btnText,
-                  style: Helper.defaultTextStyle(
-                      fontSize: 14, fontWeight: FontWeight.w600))
+              Flexible(
+                child: Text(widget.btnText,
+                    style: Helper.defaultTextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w600),
+                        maxLines: 1,),
+              )
             ],
           ),
         ),
