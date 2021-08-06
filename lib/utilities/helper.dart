@@ -86,6 +86,61 @@ class Helper {
     return colorValue;
   }
 
+  static OrderStatus setOrderStatus(int index) {
+    OrderStatus orderStatus = OrderStatus.PREPARING;
+    switch (index) {
+      case 0:
+        {
+          orderStatus = OrderStatus.ALL_ORDERS;
+          break;
+        }
+      case 1:
+        {
+          orderStatus = OrderStatus.PREPARING;
+          break;
+        }
+      case 2:
+        {
+          orderStatus = OrderStatus.SENT;
+          break;
+        }
+      case 3:
+        {
+          orderStatus = OrderStatus.RETURNED;
+          break;
+        }
+      case 4:
+        {
+          orderStatus = OrderStatus.CANCELLED;
+          break;
+        }
+      case 5:
+        {
+          orderStatus = OrderStatus.DELIVERED;
+          break;
+        }
+      default:
+        {}
+        break;
+    }
+    return orderStatus;
+  }
+
+  static List<OrderDetails> filterFunction(
+      OrderStatus orderStatus, List<OrderDetails> oldOrderDetails) {
+    List<OrderDetails> newOrderDetails = [];
+    if (orderStatus == OrderStatus.ALL_ORDERS) {
+      return loadOrderDetails();
+    } else {
+      for (var orderDetail in oldOrderDetails) {
+        if (orderDetail.orderStatus == orderStatus) {
+          newOrderDetails.add(orderDetail);
+        }
+      }
+      return newOrderDetails;
+    }
+  }
+
   static List<OrderDetails> loadOrderDetails() {
     List<OrderDetails> orderDetails = [];
     orderDetails.add(OrderDetails(

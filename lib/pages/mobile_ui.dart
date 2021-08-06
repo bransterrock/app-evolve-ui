@@ -20,6 +20,7 @@ class _MobileUIState extends State<MobileUI> {
   String searchIconPath = '';
   String sortIconPath = '';
   List<OrderDetails> orderDetails = [];
+  OrderStatus orderStatus = OrderStatus.PREPARING;
   List<bool> filterTapBooleans = [true, false, false, false, false, false];
   @override
   void initState() {
@@ -38,7 +39,12 @@ class _MobileUIState extends State<MobileUI> {
       filterTapBooleans[taps] = false;
     }
     filterTapBooleans[index] = true;
+    orderStatus = Helper.setOrderStatus(index);
+    orderDetails = Helper.loadOrderDetails();
+    orderDetails = Helper.filterFunction(orderStatus, orderDetails);
   }
+
+  filterFunction(OrderStatus orderStatus, List<OrderDetails> orderDetails) {}
 
   @override
   Widget build(BuildContext context) {

@@ -39,4 +39,4 @@ class OrderDetails {
         this.paymentMethod = paymentMethod;
 }
 
-enum OrderStatus { SENT, DELIVERED, CANCELLED, PREPARING, RETURNED }
+enum OrderStatus {ALL_ORDERS, SENT, DELIVERED, CANCELLED, PREPARING, RETURNED }
