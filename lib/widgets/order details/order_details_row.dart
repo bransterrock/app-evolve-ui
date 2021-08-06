@@ -19,9 +19,7 @@ class OrderDetailsRow extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(8, 0, 8, 16),
       decoration: BoxDecoration(
-        color: boxColor,
-        borderRadius: BorderRadius.circular(4)
-      ),
+          color: boxColor, borderRadius: BorderRadius.circular(4)),
       child: Column(
         children: [
           SizedBox(height: 12),
@@ -30,7 +28,6 @@ class OrderDetailsRow extends StatelessWidget {
             children: [
               Text(
                 leadingText,
-                
                 textAlign: TextAlign.left,
                 style: Helper.defaultTextStyle(
                     fontWeight: FontWeight.w400, fontSize: 12),
@@ -39,11 +36,11 @@ class OrderDetailsRow extends StatelessWidget {
                 trailingText,
                 textAlign: TextAlign.right,
                 style: Helper.defaultTextStyle(
-                  color: textColor,
-                    fontWeight: FontWeight.w400, fontSize: 12),
+                    color: textColor,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12),
                 softWrap: true,
                 maxLines: 2,
-
               ),
             ],
           ),

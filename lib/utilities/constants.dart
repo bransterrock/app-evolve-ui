@@ -40,7 +40,6 @@ const String searchIcon = '$iconPath/magnifying_glass.svg';
 const String sortIcon = '$iconPath/sort.svg';
 const String shoppingBagIcon = '$iconPath/shopping_bag_icon.svg';
 
-
 //Filter Header Widget Values
 const List<String> filterTitles = [
   'All Orders',
