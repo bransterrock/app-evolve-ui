@@ -1,4 +1,4 @@
-import 'package:app_evolve_ui/screen.dart';
+import 'package:app_evolve_ui/pages/orientation_condition.dart';
 import 'package:flutter/material.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 import 'package:flutter/services.dart';
