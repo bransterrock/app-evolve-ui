@@ -26,14 +26,73 @@ class OrderDetails {
       this.deliveryCompany,
       this.trackingCode,
       this.products,
-     this.price,
-     this.paymentMethod});
+      this.price,
+      this.paymentMethod});
 
-     static List<OrderDetails> searchFunction(String text, List<OrderDetails> oldOrderDetails){
+  static List<OrderDetails> searchFunction(
+      String text, List<OrderDetails> oldOrderDetails) {
     List<OrderDetails> newOrderDetails = [];
-    for(var orderDetail in oldOrderDetails){
-      if(orderDetail.orderId!.contains(text)){
+    for (var orderDetail in oldOrderDetails) {
+      if (orderDetail.orderId!.toLowerCase().contains(text.toLowerCase())) {
         newOrderDetails.add(orderDetail);
+      } else {
+        if (orderDetail.orderDate!.toLowerCase().contains(text.toLowerCase())) {
+          newOrderDetails.add(orderDetail);
+        } else {
+          if (orderDetail.time!.toLowerCase().contains(text.toLowerCase())) {
+            newOrderDetails.add(orderDetail);
+          } else {
+            if (orderDetail.deliveryLocation!
+                .toLowerCase()
+                .contains(text.toLowerCase())) {
+              newOrderDetails.add(orderDetail);
+            } else {
+              if (orderDetail.clientName!
+                  .toLowerCase()
+                  .contains(text.toLowerCase())) {
+                newOrderDetails.add(orderDetail);
+              } else {
+                if (orderDetail.clientEmail!
+                    .toLowerCase()
+                    .contains(text.toLowerCase())) {
+                  newOrderDetails.add(orderDetail);
+                } else {
+                  if (orderDetail.deliveryCompany!
+                      .toLowerCase()
+                      .contains(text.toLowerCase())) {
+                    newOrderDetails.add(orderDetail);
+                  } else {
+                    if (orderDetail.trackingCode!
+                        .toLowerCase()
+                        .contains(text.toLowerCase())) {
+                      newOrderDetails.add(orderDetail);
+                    } else {
+                      if (orderDetail.price!
+                          .toLowerCase()
+                          .contains(text.toLowerCase())) {
+                        newOrderDetails.add(orderDetail);
+                      } else {
+                        if (orderDetail.paymentMethod!
+                            .toLowerCase()
+                            .contains(text.toLowerCase())) {
+                          newOrderDetails.add(orderDetail);
+                        } else {
+                          for (var product in orderDetail.products!) {
+                            if (product
+                                .toLowerCase()
+                                .contains(text.toLowerCase())) {
+                              newOrderDetails.add(orderDetail);
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
     return newOrderDetails;
@@ -166,30 +225,30 @@ class OrderDetails {
     }
   }
 
-  static List<OrderDetails> sortFunction(List<OrderDetails> oldOrderDetails){
+  static List<OrderDetails> sortFunction(List<OrderDetails> oldOrderDetails) {
     List<OrderDetails> newOrderDetails = [];
-    for(var orderDetail in oldOrderDetails){
-      if(orderDetail.orderStatus == OrderStatus.PREPARING){
+    for (var orderDetail in oldOrderDetails) {
+      if (orderDetail.orderStatus == OrderStatus.PREPARING) {
         newOrderDetails.add(orderDetail);
       }
     }
-     for(var orderDetail in oldOrderDetails){
-      if(orderDetail.orderStatus == OrderStatus.SENT){
+    for (var orderDetail in oldOrderDetails) {
+      if (orderDetail.orderStatus == OrderStatus.SENT) {
         newOrderDetails.add(orderDetail);
       }
     }
-     for(var orderDetail in oldOrderDetails){
-      if(orderDetail.orderStatus == OrderStatus.RETURNED){
+    for (var orderDetail in oldOrderDetails) {
+      if (orderDetail.orderStatus == OrderStatus.RETURNED) {
         newOrderDetails.add(orderDetail);
       }
     }
-     for(var orderDetail in oldOrderDetails){
-      if(orderDetail.orderStatus == OrderStatus.CANCELLED){
+    for (var orderDetail in oldOrderDetails) {
+      if (orderDetail.orderStatus == OrderStatus.CANCELLED) {
         newOrderDetails.add(orderDetail);
       }
     }
-     for(var orderDetail in oldOrderDetails){
-      if(orderDetail.orderStatus == OrderStatus.DELIVERED){
+    for (var orderDetail in oldOrderDetails) {
+      if (orderDetail.orderStatus == OrderStatus.DELIVERED) {
         newOrderDetails.add(orderDetail);
       }
     }
@@ -365,5 +424,5 @@ class OrderDetails {
     return orderDetails;
   }
 }
-enum OrderStatus {ALL_ORDERS, SENT, DELIVERED, CANCELLED, PREPARING, RETURNED }
 
+enum OrderStatus { ALL_ORDERS, SENT, DELIVERED, CANCELLED, PREPARING, RETURNED }
