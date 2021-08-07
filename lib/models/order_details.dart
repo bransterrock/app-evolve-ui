@@ -1,42 +1,30 @@
 class OrderDetails {
-  String orderId = '';
-  OrderStatus orderStatus = OrderStatus.CANCELLED;
-  String orderDate = '';
-  String time = '';
-  String deliveryLocation = '';
-  String clientName = '';
-  String clientEmail = '';
-  String deliveryCompany = '';
-  String trackingCode = '';
-  List<String> products = [];
-  String price = '';
-  String paymentMethod = '';
+  String? orderId;
+  OrderStatus? orderStatus;
+  String? orderDate;
+  String? time;
+  String? deliveryLocation;
+  String? clientName;
+  String? clientEmail;
+  String? deliveryCompany;
+  String? trackingCode;
+  List<String>? products;
+  String? price;
+  String? paymentMethod;
 
   OrderDetails(
-      {orderId,
-      orderStatus,
-      orderDate,
-      time,
-      deliveryLocation,
-      clientName,
-      clientEmail,
-      deliveryCompany,
-      trackingCode,
-      products,
-      price,
-      paymentMethod})
-      : this.orderId = orderId,
-        this.orderStatus = orderStatus,
-        this.orderDate = orderDate,
-        this.time = time,
-        this.deliveryLocation = deliveryLocation,
-        this.clientName = clientName,
-        this.clientEmail = clientEmail,
-        this.deliveryCompany = deliveryCompany,
-        this.trackingCode = trackingCode,
-        this.products = products,
-        this.price = price,
-        this.paymentMethod = paymentMethod;
+      {this.orderId,
+      this.orderStatus,
+      this.orderDate,
+      this.time,
+      this.deliveryLocation,
+      this.clientName,
+      this.clientEmail,
+      this.deliveryCompany,
+      this.trackingCode,
+      this.products,
+     this.price,
+     this.paymentMethod});
 }
 
 enum OrderStatus {ALL_ORDERS, SENT, DELIVERED, CANCELLED, PREPARING, RETURNED }

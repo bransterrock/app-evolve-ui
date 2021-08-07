@@ -8,18 +8,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
 class OrderDetailsCard extends StatelessWidget {
-  String orderId = '';
-  OrderStatus orderStatus = OrderStatus.CANCELLED;
-  String orderDate = '';
-  String time = '';
-  String deliveryLocation = '';
-  String clientName = '';
-  String clientEmail = '';
-  String deliveryCompany = '';
-  String trackingCode = '';
-  List<String> products = [];
-  String price = '';
-  String paymentMethod = '';
+  String? orderId;
+  OrderStatus? orderStatus;
+  String? orderDate;
+  String? time;
+  String? deliveryLocation;
+  String? clientName;
+  String? clientEmail;
+  String? deliveryCompany;
+  String? trackingCode;
+  List<String>? products;
+  String? price;
+  String? paymentMethod;
 
   OrderDetailsCard(
       {required this.orderId,
@@ -60,21 +60,24 @@ class OrderDetailsCard extends StatelessWidget {
                 child: Row(
                   children: [
                     CircleAvatar(
-                      backgroundColor: Helper.getBtnColor(orderStatus),
+                      radius: 15,
+                      backgroundColor: Helper.getBtnColor(
+                          orderStatus ?? OrderStatus.ALL_ORDERS),
                       child: SvgPicture.asset(
                         constants.shoppingBagIcon,
-                        height: 22,
-                        width: 22,
+                        height: 16,
+                        width: 15,
                       ),
                     ),
                     SizedBox(width: 8),
-                    Text(orderId,
+                    Text(orderId ?? 'No Order ID',
                         style: Helper.defaultTextStyle(
                             color: constants.SUPER_DARK_BLUE,
                             fontSize: 14,
                             fontWeight: FontWeight.w600)),
                     Spacer(),
-                    OrderStatusWidget(orderStatus: orderStatus),
+                    OrderStatusWidget(
+                        orderStatus: orderStatus ?? OrderStatus.ALL_ORDERS),
                   ],
                 ),
               ),
@@ -82,29 +85,34 @@ class OrderDetailsCard extends StatelessWidget {
                   opacity: 0.25,
                   child: Divider(thickness: 1, color: constants.MEDIUM_GREY)),
               OrderDetailsRow(
-                  leadingText: orderDate + ', ' + time,
-                  trailingText: deliveryLocation,
+                  leadingText: orderDate! + ', ' + time!,
+                  trailingText: deliveryLocation ?? 'No Delivery Location',
                   textColor: constants.MEDIUM_GREY),
               OrderDetailsRow(
                   leadingText: 'Client Name',
-                  trailingText: clientName,
+                  trailingText: clientName ?? 'No Client Name',
                   boxColor: constants.DELIVERY_CARD_BACKGROUND),
               OrderDetailsRow(
-                  leadingText: 'Client Email', trailingText: clientEmail),
+                  leadingText: 'Client Email',
+                  trailingText: clientEmail ?? 'No Client Email'),
               OrderDetailsRow(
                   leadingText: 'Delivery Company',
-                  trailingText: deliveryCompany,
+                  trailingText: deliveryCompany ?? 'No Delivery Company',
                   boxColor: constants.DELIVERY_CARD_BACKGROUND),
               OrderDetailsRow(
-                  leadingText: 'Tracking Code', trailingText: trackingCode),
+                  leadingText: 'Tracking Code',
+                  trailingText: trackingCode ?? 'No Tracking Code'),
               OrderDetailsRow(
                   leadingText: 'Products',
-                  trailingText: listAllProducts(products),
+                  trailingText:
+                      listAllProducts(products ?? ['No Products Provided']),
                   boxColor: constants.DELIVERY_CARD_BACKGROUND),
-              OrderDetailsRow(leadingText: 'Price', trailingText: price),
+              OrderDetailsRow(
+                  leadingText: 'Price',
+                  trailingText: price ?? 'No Price Found'),
               OrderDetailsRow(
                 leadingText: 'Payment Method',
-                trailingText: paymentMethod,
+                trailingText: paymentMethod ?? 'No Payment Method',
                 boxColor: constants.DELIVERY_CARD_BACKGROUND,
               )
             ],

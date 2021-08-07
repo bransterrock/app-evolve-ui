@@ -17,24 +17,24 @@ class OrderDetailsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(8, 0, 8, 16),
+      padding: const EdgeInsets.all(8.5),
       decoration: BoxDecoration(
           color: boxColor, borderRadius: BorderRadius.circular(4)),
       child: Column(
         children: [
-          SizedBox(height: 12),
+          //SizedBox(height: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Flexible(
-                child: Text(
-                  leadingText,
-                  textAlign: TextAlign.left,
-                  style: Helper.defaultTextStyle(
-                      fontWeight: FontWeight.w400, fontSize: 12),
-                ),
+              Text(
+                leadingText,
+                textAlign: TextAlign.left,
+                overflow: TextOverflow.ellipsis,
+                style: Helper.defaultTextStyle(
+                    fontWeight: FontWeight.w400, fontSize: 12),
               ),
-              Flexible(
+              Expanded(
                 child: Text(
                   trailingText,
                   textAlign: TextAlign.right,
