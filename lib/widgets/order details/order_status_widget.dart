@@ -17,17 +17,17 @@ class OrderStatusWidget extends StatelessWidget {
       // width: 88,
       child: Center(
         child: Text(
-          Helper.getBtnName(orderStatus),
+          OrderDetails.getBtnName(orderStatus),
           style: Helper.defaultTextStyle(
               color: orderStatus == OrderStatus.PREPARING
                   ? constants.PREPARING_TEXT_COLOR
-                  : Helper.getBtnColor(orderStatus),
+                  : OrderDetails.getBtnColor(orderStatus),
               fontSize: 12,
               fontWeight: FontWeight.w600),
         ),
       ),
       decoration: BoxDecoration(
-          color: Helper.getBtnColor(orderStatus).withOpacity(0.25),
+          color: OrderDetails.getBtnColor(orderStatus).withOpacity(0.25),
           borderRadius: BorderRadius.circular(100)),
     );
   }

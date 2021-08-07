@@ -61,7 +61,7 @@ class OrderDetailsCard extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 15,
-                      backgroundColor: Helper.getBtnColor(
+                      backgroundColor: OrderDetails.getBtnColor(
                           orderStatus ?? OrderStatus.ALL_ORDERS),
                       child: SvgPicture.asset(
                         constants.shoppingBagIcon,
