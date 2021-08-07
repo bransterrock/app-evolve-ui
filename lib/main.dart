@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: constants.SUPER_DARK_BLUE,
       ),
-      home: SafeArea(child: OrientationCondition()),
+      home: OrientationCondition(),
     );
   }
 }

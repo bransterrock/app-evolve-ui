@@ -57,18 +57,8 @@ class _MobileUIState extends State<MobileUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: constants.SCAFFOLD_BACKGROUND,
-      drawer: Drawer(
-        child: Container(
-          color: constants.SUPER_DARK_BLUE,
-          child: DrawerHeader(
-            child: SvgPicture.asset(
-              logoPath,
-              fit: BoxFit.scaleDown,
-            ),
-          ),
-        ),
-      ),
       appBar: AppBar(
+        backgroundColor: constants.SUPER_DARK_BLUE,
         centerTitle: true,
         title: Text(
           'Orders',
@@ -98,6 +88,17 @@ class _MobileUIState extends State<MobileUI> {
             )),
           )
         ],
+      ),
+      drawer: Drawer(
+        child: Container(
+          color: constants.SUPER_DARK_BLUE,
+          child: DrawerHeader(
+            child: SvgPicture.asset(
+              logoPath,
+              fit: BoxFit.scaleDown,
+            ),
+          ),
+        ),
       ),
       body: Column(
         children: [
