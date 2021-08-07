@@ -32,7 +32,7 @@ class _MobileUIState extends State<MobileUI> {
     filterImagePath = constants.filterLogo;
     searchIconPath = constants.searchIcon;
     sortIconPath = constants.sortIcon;
-    orderDetails = Helper.loadOrderDetails();
+    orderDetails = OrderDetails.loadOrderDetails();
   }
 
   isButtonTapped(int index, [bool sortWasTapped = false]) {
@@ -46,9 +46,9 @@ class _MobileUIState extends State<MobileUI> {
         filterTapBooleans[taps] = false;
       }
     }
-    orderStatus = Helper.setOrderStatus(index);
-    orderDetails = Helper.loadOrderDetails();
-    orderDetails = Helper.filterFunction(orderStatus, orderDetails);
+    orderStatus = OrderDetails.setOrderStatus(index);
+    orderDetails = OrderDetails.loadOrderDetails();
+    orderDetails = OrderDetails.filterFunction(orderStatus, orderDetails);
   }
 
   filterFunction(OrderStatus orderStatus, List<OrderDetails> orderDetails) {}
@@ -104,8 +104,8 @@ class _MobileUIState extends State<MobileUI> {
         children: [
           SearchBar(searchIconPath, onTap: (text) {
             setState(() {
-              orderDetails = Helper.loadOrderDetails();
-              orderDetails = Helper.searchFunction(text, orderDetails);
+              orderDetails = OrderDetails.loadOrderDetails();
+              orderDetails = OrderDetails.searchFunction(text, orderDetails);
             });
           }),
           Padding(
@@ -135,7 +135,7 @@ class _MobileUIState extends State<MobileUI> {
                       onTap: () {
                         setState(() {
                           isButtonTapped(0, true);
-                          orderDetails = Helper.sortFunction(orderDetails);
+                          orderDetails = OrderDetails.sortFunction(orderDetails);
                           controller.jumpTo(0);
                         });
                       }),

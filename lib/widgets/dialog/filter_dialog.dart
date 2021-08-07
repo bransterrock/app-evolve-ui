@@ -16,7 +16,7 @@ class FilterDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       title: Center(child: Text('Filter')),
       titleTextStyle:
-          Helper.defaultTextStyle(color: Helper.getBtnColor(orderStatus)),
+          Helper.defaultTextStyle(color: OrderDetails.getBtnColor(orderStatus)),
       content: Text(
         'Please select one of the filter buttons above the order details for filtering',
         textAlign: TextAlign.center,
