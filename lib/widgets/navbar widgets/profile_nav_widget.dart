@@ -16,6 +16,7 @@ class ProfileNavBarWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
+          SizedBox(width: 5,),
           CircleAvatar(
             backgroundColor: Colors.white,
             radius: 20,
@@ -39,8 +40,9 @@ class ProfileNavBarWidget extends StatelessWidget {
             style: Helper.defaultTextStyle(
                 color: Colors.white, fontWeight: FontWeight.w600, fontSize: 14),
           ),
-          SizedBox(width: 43),
+          SizedBox(width: 35),
           SvgPicture.asset(constants.kSettingIcon),
+          SizedBox(width: 10,)
         ],
       ),
     );
