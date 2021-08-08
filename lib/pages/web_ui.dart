@@ -15,9 +15,7 @@ class _WebUIState extends State<WebUI> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: constants.SCAFFOLD_BACKGROUND,
-        body: Row(
+    return Row(
           children: [
             Container(
               color: Theme.of(context).primaryColor,
@@ -31,6 +29,6 @@ class _WebUIState extends State<WebUI> {
               ),
             ),
           ],
-        ));
+        );
   }
 }

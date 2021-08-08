@@ -17,7 +17,7 @@ class OrderDetailsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8.5),
+      padding: const EdgeInsets.all(7.8),
       decoration: BoxDecoration(
           color: boxColor, borderRadius: BorderRadius.circular(4)),
       child: Column(

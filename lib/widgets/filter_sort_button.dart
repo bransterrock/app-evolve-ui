@@ -24,15 +24,16 @@ class _FilterSortWidgetState extends State<FilterSortWidget> {
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(4)),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(widget.imagePath),
-            Flexible(
-              child: Text(widget.btnText,
-                  style: Helper.defaultTextStyle(
-                      fontSize: 14, fontWeight: FontWeight.w600),
-                      maxLines: 1,),
+            SizedBox(width: widget.btnText.contains('Filter')? 8 : 8.02),
+            Text(
+              widget.btnText,
+              style: Helper.defaultTextStyle(
+                  fontSize: 14, fontWeight: FontWeight.w600),
+              maxLines: 1,
             )
           ],
         ),
