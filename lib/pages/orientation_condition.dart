@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:app_evolve_ui/pages/mobile_ui.dart';
+import 'package:app_evolve_ui/pages/web_ui.dart';
 import 'package:flutter/material.dart';
 
 class OrientationCondition extends StatefulWidget {
@@ -11,13 +12,9 @@ class OrientationCondition extends StatefulWidget {
 class _OrientationConditionState extends State<OrientationCondition> {
   @override
   Widget build(BuildContext context) {
+    print('Platform is: ' + Platform.operatingSystem);
     return OrientationBuilder(
-        builder: (context, orientation) => orientation == Orientation.portrait
-            ? Platform.isAndroid
-                //Android needs the SafeArea to properly display icon color above the app bar
-                //hence the ternary operator
-                ? SafeArea(child: MobileUI())
-                : MobileUI()
-            : Text(''));
+        builder: (context, orientation) =>
+            orientation == Orientation.portrait ? MobileUI() : WebUI());
   }
 }

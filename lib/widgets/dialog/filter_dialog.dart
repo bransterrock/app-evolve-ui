@@ -22,7 +22,7 @@ class FilterDialog extends StatelessWidget {
         textAlign: TextAlign.center,
       ),
       contentTextStyle: Helper.defaultTextStyle(
-          color: constants.SUPER_DARK_BLUE, fontSize: 18),
+          color: Theme.of(context).primaryColor, fontSize: 18),
     );
   }
 }

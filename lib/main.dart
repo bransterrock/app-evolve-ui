@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: constants.SUPER_DARK_BLUE,
-    statusBarIconBrightness: Brightness.light,
     statusBarBrightness: Brightness.dark,
   ));
   runApp(MyApp());
@@ -17,9 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Flutter Test UI',
       theme: ThemeData(
         primarySwatch: constants.SUPER_DARK_BLUE,
+        scaffoldBackgroundColor: constants.SCAFFOLD_BACKGROUND,
+        appBarTheme: AppBarTheme(brightness: Brightness.dark),
       ),
       home: OrientationCondition(),
     );

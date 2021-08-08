@@ -72,7 +72,7 @@ class OrderDetailsCard extends StatelessWidget {
                     SizedBox(width: 8),
                     Text(orderId ?? 'No Order ID',
                         style: Helper.defaultTextStyle(
-                            color: constants.SUPER_DARK_BLUE,
+                            color: Theme.of(context).primaryColor,
                             fontSize: 14,
                             fontWeight: FontWeight.w600)),
                     Spacer(),

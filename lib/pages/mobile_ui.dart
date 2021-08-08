@@ -51,14 +51,12 @@ class _MobileUIState extends State<MobileUI> {
     orderDetails = OrderDetails.filterFunction(orderStatus, orderDetails);
   }
 
-  filterFunction(OrderStatus orderStatus, List<OrderDetails> orderDetails) {}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: constants.SCAFFOLD_BACKGROUND,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: constants.SUPER_DARK_BLUE,
+        backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         title: Text(
           'Orders',
@@ -91,7 +89,7 @@ class _MobileUIState extends State<MobileUI> {
       ),
       drawer: Drawer(
         child: Container(
-          color: constants.SUPER_DARK_BLUE,
+          color: Theme.of(context).primaryColor,
           child: DrawerHeader(
             child: SvgPicture.asset(
               logoPath,
