@@ -1,6 +1,5 @@
-import 'package:app_evolve_ui/utilities/constants.dart' as constants;
+import 'package:app_evolve_ui/widgets/navbar%20widgets/web_navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class WebUI extends StatefulWidget {
   @override
@@ -16,19 +15,22 @@ class _WebUIState extends State<WebUI> {
   @override
   Widget build(BuildContext context) {
     return Row(
-          children: [
-            Container(
-              color: Theme.of(context).primaryColor,
-              child: Column(
-                children: [SvgPicture.asset(constants.appEvolveLogo)],
-              ),
-            ),
-            Expanded(
-              child: Center(
-                child: Text('HELLO WORLD'),
-              ),
-            ),
-          ],
-        );
+      children: [
+        Flexible(
+          flex: 1,
+          child: WebNavBar(),
+        ),
+        Flexible(
+          flex: 9,
+          child: Center(
+            child: Text('HELLO WORLD'),
+          ),
+        ),
+      ],
+    );
   }
 }
+
+
+
+

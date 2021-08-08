@@ -27,6 +27,8 @@ const Color RETURNED_ICON_COLOR = Color(0xff466CA2);
 
 const Color DELIVERY_CARD_BACKGROUND = Color(0xffF8F8F9);
 
+const Color kNavBarColor = Color(0xffFF5246);
+
 //Image Path Strings
 const String imagePath = 'assets/images';
 const String avatarImage = '$imagePath/avatar_image.png';
@@ -38,7 +40,16 @@ const String iconPath = 'assets/icons';
 const String filterLogo = '$iconPath/filter_icon.svg';
 const String searchIcon = '$iconPath/magnifying_glass.svg';
 const String sortIcon = '$iconPath/sort.svg';
-const String shoppingBagIcon = '$iconPath/shopping_bag_icon.svg';
+const String kOrderIcon = '$iconPath/shopping_bag_icon.svg';
+const String kDashBoardIcon = '$iconPath/dashboard.svg';
+const String kDiscountVoucherIcon = '$iconPath/discount_voucher.svg';
+const String kPriceTagIcon = '$iconPath/price_tag.svg';
+const String kProfileIcon = '$iconPath/profile.svg';
+const String kReportIcon = '$iconPath/report.svg';
+const String kStoreIcon = '$iconPath/store.svg';
+const String kSupportIcon = '$iconPath/support.svg';
+
+const String kSettingIcon = '$iconPath/setting.svg';
 
 //Filter Header Widget Values
 const List<String> filterTitles = [
@@ -48,5 +59,27 @@ const List<String> filterTitles = [
   'Returned',
   'Cancelled',
   'Delivered',
+];
+
+const List<String> kNavBarTitles = [
+  'Dashboard',
+  'Orders',
+  'Products',
+  'Clients',
+  'Stores',
+  'Promo Codes',
+  'Reports',
+  'Support',
+];
+
+const List<String> kNavBarIconPaths = [
+  kDashBoardIcon,
+  kOrderIcon,
+  kPriceTagIcon,
+  kProfileIcon,
+  kStoreIcon,
+  kDiscountVoucherIcon,
+  kReportIcon,
+  kSupportIcon
 ];
 const List<int> filternumberValues = [294, 12, 77, 14, 16, 134];

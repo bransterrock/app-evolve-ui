@@ -24,7 +24,7 @@ class _FilterSortWidgetState extends State<FilterSortWidget> {
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(4)),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(widget.imagePath),

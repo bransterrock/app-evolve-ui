@@ -64,7 +64,7 @@ class OrderDetailsCard extends StatelessWidget {
                       backgroundColor: OrderDetails.getBtnColor(
                           orderStatus ?? OrderStatus.ALL_ORDERS),
                       child: SvgPicture.asset(
-                        constants.shoppingBagIcon,
+                        constants.kOrderIcon,
                         height: 16,
                         width: 15,
                       ),
