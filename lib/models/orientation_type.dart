@@ -1,0 +1,1 @@
+enum OrientationType { mobile, web }

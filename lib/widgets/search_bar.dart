@@ -1,3 +1,4 @@
+import 'package:app_evolve_ui/models/orientation_type.dart';
 import 'package:app_evolve_ui/utilities/helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -7,15 +8,22 @@ class SearchBar extends StatelessWidget {
   String iconPathName;
   TextEditingController controller = TextEditingController();
   Function onTap;
-  SearchBar(this.iconPathName, {required this.onTap(String text)});
+  OrientationType orientationType;
+  SearchBar(this.iconPathName,
+      {required this.onTap(String text),
+      this.orientationType = OrientationType.mobile});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: orientationType == OrientationType.mobile
+          ? const EdgeInsets.all(16.0)
+          : const EdgeInsets.all(0),
       child: Container(
         height: 40,
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+        padding: orientationType == OrientationType.mobile
+            ? const EdgeInsets.symmetric(vertical: 10, horizontal: 25)
+            : const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(4)),
         child: TextField(

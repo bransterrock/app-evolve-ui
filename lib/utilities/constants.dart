@@ -50,6 +50,12 @@ const String kStoreIcon = '$iconPath/store.svg';
 const String kSupportIcon = '$iconPath/support.svg';
 
 const String kSettingIcon = '$iconPath/setting.svg';
+const String kPrintIcon = '$iconPath/print.svg';
+const String kExportIcon = '$iconPath/export.svg';
+const String kDropdownIcon = '$iconPath/dropdown.svg';
+const String kDateIcon = '$iconPath/date.svg';
+const String kOrderStatusIcon = '$iconPath/status.svg';
+const String kDistribution = '$iconPath/distribution.svg';
 
 //Filter Header Widget Values
 const List<String> filterTitles = [

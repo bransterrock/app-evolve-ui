@@ -23,37 +23,42 @@ class _NavBarTilesState extends State<NavBarTiles> {
                 child: Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
-                      height: 55,
+                      height: 60,
                       width: 5,
                       color: constants.kNavBarColor,
                     )),
               ),
-              ListTile(
-                contentPadding: const EdgeInsets.only(top: 8),
-                leading: Padding(
-                  padding: const EdgeInsets.only(left: 12),
-                  child: SvgPicture.asset(constants.kNavBarIconPaths[index]),
-                ),
-                horizontalTitleGap: 10,
-                title: Text(
-                  constants.kNavBarTitles[index],
-                  maxLines: 1,
-                  style: Helper.defaultTextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16),
-                ),
-                tileColor: Theme.of(context).primaryColor,
-                hoverColor: index == selectedIndex
-                    ? constants.kNavBarColor
-                    : constants.TURQUOISE,
-                selectedTileColor: constants.kNavBarColor,
-                selected: index == selectedIndex,
-                onTap: () {
-                  setState(() {
-                    selectedIndex = index;
-                  });
-                },
+              Column(
+                children: [
+                  Container(height: 4, color: Theme.of(context).primaryColor,),
+                  ListTile(
+                    contentPadding: const EdgeInsets.only(top: 8),
+                    leading: Padding(
+                      padding: const EdgeInsets.only(left: 12),
+                      child: SvgPicture.asset(constants.kNavBarIconPaths[index]),
+                    ),
+                    horizontalTitleGap: 10,
+                    title: Text(
+                      constants.kNavBarTitles[index],
+                      maxLines: 1,
+                      style: Helper.defaultTextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16),
+                    ),
+                    tileColor: Theme.of(context).primaryColor,
+                    hoverColor: index == selectedIndex
+                        ? constants.kNavBarColor
+                        : constants.TURQUOISE,
+                    selectedTileColor: constants.kNavBarColor,
+                    selected: index == selectedIndex,
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                  ),
+                ],
               ),
             ]));
   }

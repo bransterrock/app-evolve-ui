@@ -36,13 +36,17 @@ class WebNavBar extends StatelessWidget {
               ],
             ),
           ),
-          Flexible(flex: 4, child: NavBarTiles()),
+          Flexible(flex: 5, child: NavBarTiles()),
           Expanded(
             flex: 3,
             child: Container(
               color: constants.SUPER_DARK_BLUE,
             ),
           ),
+           Container(
+             height: 6,
+              color: constants.SUPER_DARK_BLUE,
+            ),
           Container(
             color: constants.MEDIUM_GREY,
             height: 1,

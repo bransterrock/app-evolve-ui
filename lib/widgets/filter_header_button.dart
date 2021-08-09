@@ -1,3 +1,4 @@
+import 'package:app_evolve_ui/models/orientation_type.dart';
 import 'package:app_evolve_ui/utilities/helper.dart';
 import 'package:flutter/material.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
@@ -8,12 +9,14 @@ class FilterHeader extends StatefulWidget {
   int numberValue;
   bool isTapped;
   int index;
+  OrientationType orientationType;
   Function onTap;
   FilterHeader(
       {required this.title,
       required this.numberValue,
       required this.index,
       required this.isTapped,
+      this.orientationType = OrientationType.mobile,
       required this.onTap});
 
   @override
@@ -41,7 +44,9 @@ class _FilterHeaderState extends State<FilterHeader> {
               Text(
                 widget.title,
                 style: Helper.defaultTextStyle(
-                  fontSize: 14,
+                  fontSize: widget.orientationType == OrientationType.mobile
+                      ? 14
+                      : 16,
                   color: widget.isTapped
                       ? constants.TURQUOISE
                       : constants.MEDIUM_GREY,
@@ -60,7 +65,9 @@ class _FilterHeaderState extends State<FilterHeader> {
                 child: Text(
                   widget.numberValue.toString(),
                   style: Helper.defaultTextStyle(
-                      fontSize: 8,
+                      fontSize: widget.orientationType == OrientationType.mobile
+                          ? 8
+                          : 10,
                       fontWeight: FontWeight.w700,
                       color: Colors.white),
                 ),
