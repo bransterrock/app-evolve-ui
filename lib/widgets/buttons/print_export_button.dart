@@ -28,12 +28,14 @@ class PrintExportButton extends StatelessWidget {
             SizedBox(
               width: 8,
             ),
-            SvgPicture.asset(iconPath),
+            Flexible(child: SvgPicture.asset(iconPath)),
             SizedBox(
               width: 8,
             ),
             Text(
               btnText,
+              maxLines: 1,
+              softWrap: true,
               style: Helper.defaultTextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
@@ -47,11 +49,13 @@ class PrintExportButton extends StatelessWidget {
               child: Flexible(
                 child: Row(
                   children: [
-                    SvgPicture.asset(
-                      constants.kDropdownIcon,
-                      color: constants.TURQUOISE,
+                    Flexible(
+                      child: SvgPicture.asset(
+                        constants.kDropdownIcon,
+                        color: constants.TURQUOISE,
+                      ),
                     ),
-                    SizedBox(width: 12),
+                    Flexible(child: SizedBox(width: 12)),
                   ],
                 ),
               ),

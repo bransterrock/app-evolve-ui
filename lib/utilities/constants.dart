@@ -28,6 +28,8 @@ const Color RETURNED_ICON_COLOR = Color(0xff466CA2);
 const Color DELIVERY_CARD_BACKGROUND = Color(0xffF8F8F9);
 
 const Color kNavBarColor = Color(0xffFF5246);
+const Color kLightGrayColor = Color(0xffF0F0F0);
+const Color kArrowGrayColor = Color(0xffD6D5D9);
 
 //Image Path Strings
 const String imagePath = 'assets/images';
@@ -56,6 +58,10 @@ const String kDropdownIcon = '$iconPath/dropdown.svg';
 const String kDateIcon = '$iconPath/date.svg';
 const String kOrderStatusIcon = '$iconPath/status.svg';
 const String kDistribution = '$iconPath/distribution.svg';
+
+const String kSortArrowIcon = '$iconPath/sort_arrows.svg';
+const String kSortArrowUp = '$iconPath/sort_arrow_up.svg';
+const String kSortArrowDown = '$iconPath/sort_arrow_down.svg';
 
 //Filter Header Widget Values
 const List<String> filterTitles = [

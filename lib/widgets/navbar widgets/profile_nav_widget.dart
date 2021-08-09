@@ -17,22 +17,24 @@ class ProfileNavBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           SizedBox(width: 5,),
-          CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 20,
+          Flexible(
             child: CircleAvatar(
-              radius: 18,
-              child: Stack(alignment: Alignment.bottomRight, children: [
-                ClipOval(
-                  child: SvgPicture.asset(constants.avatarImageSvg),
-                ),
-                Container(
-                  height: 10,
-                  width: 10,
-                  decoration: BoxDecoration(
-                      color: constants.TURQUOISE, shape: BoxShape.circle),
-                ),
-              ]),
+              backgroundColor: Colors.white,
+              radius: 20,
+              child: CircleAvatar(
+                radius: 18,
+                child: Stack(alignment: Alignment.bottomRight, children: [
+                  ClipOval(
+                    child: SvgPicture.asset(constants.avatarImageSvg),
+                  ),
+                  Container(
+                    height: 10,
+                    width: 10,
+                    decoration: BoxDecoration(
+                        color: constants.TURQUOISE, shape: BoxShape.circle),
+                  ),
+                ]),
+              ),
             ),
           ),
           Text(
@@ -41,7 +43,7 @@ class ProfileNavBarWidget extends StatelessWidget {
                 color: Colors.white, fontWeight: FontWeight.w600, fontSize: 14),
           ),
           SizedBox(width: 35),
-          SvgPicture.asset(constants.kSettingIcon),
+          Flexible(child: SvgPicture.asset(constants.kSettingIcon)),
           SizedBox(width: 10,)
         ],
       ),

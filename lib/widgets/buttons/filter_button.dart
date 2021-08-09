@@ -25,11 +25,14 @@ class FilterButton extends StatelessWidget {
             ),
             SvgPicture.asset(leadingIconPath),
             Spacer(flex: 1),
-            Text(
-              btnText,
-              style: Helper.defaultTextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
+            Flexible(
+              flex: 7,
+              child: Text(
+                btnText,
+                style: Helper.defaultTextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
             Spacer(
