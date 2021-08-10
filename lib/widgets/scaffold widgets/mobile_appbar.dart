@@ -36,7 +36,7 @@ class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
                   height: 6.7,
                   width: 6.7,
                   decoration: BoxDecoration(
-                      color: constants.TURQUOISE, shape: BoxShape.circle),
+                      color: constants.kTurquoise, shape: BoxShape.circle),
                 ),
               ]),
             ),

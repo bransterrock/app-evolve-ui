@@ -28,7 +28,7 @@ class _FilterSortWidgetState extends State<FilterSortWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(widget.imagePath),
-            SizedBox(width: widget.btnText.contains('Filter')? 8 : 8.02),
+            SizedBox(width: widget.btnText.contains('Filter') ? 8 : 8.02),
             Text(
               widget.btnText,
               style: Helper.defaultTextStyle(

@@ -138,32 +138,32 @@ class OrderDetails {
     switch (orderStatus) {
       case OrderStatus.PREPARING:
         {
-          colorValue = PREPARING_ICON_COLOR;
+          colorValue = kPreparingIconColor;
         }
         break;
       case OrderStatus.DELIVERED:
         {
-          colorValue = DELIVERED_ICON_COLOR;
+          colorValue = kDeliveredIconColor;
         }
         break;
       case OrderStatus.CANCELLED:
         {
-          colorValue = CANCELLED_ICON_COLOR;
+          colorValue = kCancelledIconColor;
         }
         break;
       case OrderStatus.RETURNED:
         {
-          colorValue = RETURNED_ICON_COLOR;
+          colorValue = kReturnedIconColor;
         }
         break;
       case OrderStatus.SENT:
         {
-          colorValue = SENT_ICON_COLOR;
+          colorValue = kSentIconColor;
         }
         break;
       default:
         {
-          colorValue = MEDIUM_GREY;
+          colorValue = kMediumGrey;
         }
         break;
     }
@@ -340,7 +340,11 @@ class OrderDetails {
         clientEmail: 'v.kelley@msn.com',
         deliveryCompany: 'FedEx',
         trackingCode: '603-577113',
-        products: ['Hybrid Shirt Pants, ', 'Rhino Derby, ', 'Punk Tag Necklace, '],
+        products: [
+          'Hybrid Shirt Pants, ',
+          'Rhino Derby, ',
+          'Punk Tag Necklace, '
+        ],
         price: '\$3,607.34.32',
         paymentMethod: 'PayPal'));
 

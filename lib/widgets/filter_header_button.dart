@@ -30,12 +30,12 @@ class _FilterHeaderState extends State<FilterHeader> {
       padding: EdgeInsets.only(left: widget.index == 0 ? 16 : 8),
       child: InkWell(
         borderRadius: BorderRadius.circular(4),
-        splashColor: constants.TURQUOISE,
+        splashColor: constants.kTurquoise,
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
           decoration: BoxDecoration(
               color: widget.isTapped
-                  ? constants.TURQUOISE.withOpacity(0.25)
+                  ? constants.kTurquoise.withOpacity(0.25)
                   : Colors.transparent,
               borderRadius: BorderRadius.circular(4)),
           child: Row(
@@ -48,8 +48,8 @@ class _FilterHeaderState extends State<FilterHeader> {
                       ? 14
                       : 16,
                   color: widget.isTapped
-                      ? constants.TURQUOISE
-                      : constants.MEDIUM_GREY,
+                      ? constants.kTurquoise
+                      : constants.kMediumGrey,
                 ),
               ),
               SizedBox(width: 4),
@@ -57,8 +57,8 @@ class _FilterHeaderState extends State<FilterHeader> {
                 padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
                 decoration: BoxDecoration(
                     color: widget.isTapped
-                        ? constants.TURQUOISE
-                        : constants.MEDIUM_GREY,
+                        ? constants.kTurquoise
+                        : constants.kMediumGrey,
                     borderRadius: BorderRadius.vertical(
                         top: Radius.circular(15), bottom: Radius.circular(15)),
                     shape: BoxShape.rectangle),

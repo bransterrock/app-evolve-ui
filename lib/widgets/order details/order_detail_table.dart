@@ -40,7 +40,7 @@ class _OrderDetailsTableState extends State<OrderDetailsTable> {
                   style: Helper.defaultTextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
-                      color: constants.TURQUOISE))
+                      color: constants.kTurquoise))
             ]),
       );
     }
@@ -83,7 +83,7 @@ class _OrderDetailsTableState extends State<OrderDetailsTable> {
                       ? [
                           BoxShadow(
                             blurRadius: 3,
-                            color: constants.MEDIUM_GREY,
+                            color: constants.kMediumGrey,
                             spreadRadius: 0.2,
                           ),
                         ]
@@ -92,8 +92,8 @@ class _OrderDetailsTableState extends State<OrderDetailsTable> {
               children: [
                 Checkbox(
                   value: checkBoxValue,
-                  activeColor: constants.TURQUOISE,
-                  hoverColor: constants.TURQUOISE.withOpacity(0.25),
+                  activeColor: constants.kTurquoise,
+                  hoverColor: constants.kTurquoise.withOpacity(0.25),
                   splashRadius: 16,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4)),
@@ -129,7 +129,7 @@ class _OrderDetailsTableState extends State<OrderDetailsTable> {
                         textAlign: TextAlign.left,
                         style: Helper.defaultTextStyle(
                             fontWeight: FontWeight.w400,
-                            color: constants.MEDIUM_GREY,
+                            color: constants.kMediumGrey,
                             fontSize: 12)),
                   ],
                 ),
@@ -147,7 +147,7 @@ class _OrderDetailsTableState extends State<OrderDetailsTable> {
                         textAlign: TextAlign.left,
                         style: Helper.defaultTextStyle(
                             fontWeight: FontWeight.w400,
-                            color: constants.MEDIUM_GREY,
+                            color: constants.kMediumGrey,
                             fontSize: 12)),
                   ],
                 ),
@@ -183,7 +183,7 @@ class _OrderDetailsTableState extends State<OrderDetailsTable> {
                         textAlign: TextAlign.left,
                         style: Helper.defaultTextStyle(
                             fontWeight: FontWeight.w400,
-                            color: constants.MEDIUM_GREY,
+                            color: constants.kMediumGrey,
                             fontSize: 12)),
                   ],
                 ),
@@ -231,7 +231,7 @@ class _OrderDetailsTableState extends State<OrderDetailsTable> {
                         textAlign: TextAlign.left,
                         style: Helper.defaultTextStyle(
                             fontWeight: FontWeight.w400,
-                            color: constants.MEDIUM_GREY,
+                            color: constants.kMediumGrey,
                             fontSize: 12)),
                   ],
                 ),

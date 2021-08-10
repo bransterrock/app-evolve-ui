@@ -16,6 +16,7 @@ class _NavBarTilesState extends State<NavBarTiles> {
   Widget build(BuildContext context) {
     return ListView.builder(
         itemCount: constants.kNavBarTitles.length,
+        physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) => Stack(children: [
               Visibility(
                 visible: index == selectedIndex,
@@ -29,12 +30,16 @@ class _NavBarTilesState extends State<NavBarTiles> {
               ),
               Column(
                 children: [
-                  Container(height: 4, color: Theme.of(context).primaryColor,),
+                  Container(
+                    height: 4,
+                    color: Theme.of(context).primaryColor,
+                  ),
                   ListTile(
                     contentPadding: const EdgeInsets.only(top: 8),
                     leading: Padding(
                       padding: const EdgeInsets.only(left: 12),
-                      child: SvgPicture.asset(constants.kNavBarIconPaths[index]),
+                      child:
+                          SvgPicture.asset(constants.kNavBarIconPaths[index]),
                     ),
                     horizontalTitleGap: 10,
                     title: Text(
@@ -48,9 +53,10 @@ class _NavBarTilesState extends State<NavBarTiles> {
                     tileColor: Theme.of(context).primaryColor,
                     hoverColor: index == selectedIndex
                         ? constants.kNavBarColor
-                        : constants.TURQUOISE,
+                        : constants.kTurquoise,
                     selectedTileColor: constants.kNavBarColor,
                     selected: index == selectedIndex,
+                    enabled: constants.kNavBarTitles[index].isNotEmpty,
                     onTap: () {
                       setState(() {
                         selectedIndex = index;

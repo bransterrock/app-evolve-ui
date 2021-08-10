@@ -12,11 +12,13 @@ class ProfileNavBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 108,
-      color: constants.SUPER_DARK_BLUE,
+      color: constants.kSuperDarkBlue,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          SizedBox(width: 5,),
+          SizedBox(
+            width: 5,
+          ),
           Flexible(
             child: CircleAvatar(
               backgroundColor: Colors.white,
@@ -25,13 +27,13 @@ class ProfileNavBarWidget extends StatelessWidget {
                 radius: 18,
                 child: Stack(alignment: Alignment.bottomRight, children: [
                   ClipOval(
-                    child: SvgPicture.asset(constants.avatarImageSvg),
+                    child: SvgPicture.asset(constants.kAvatarImageSvg),
                   ),
                   Container(
                     height: 10,
                     width: 10,
                     decoration: BoxDecoration(
-                        color: constants.TURQUOISE, shape: BoxShape.circle),
+                        color: constants.kTurquoise, shape: BoxShape.circle),
                   ),
                 ]),
               ),
@@ -44,7 +46,9 @@ class ProfileNavBarWidget extends StatelessWidget {
           ),
           SizedBox(width: 35),
           Flexible(child: SvgPicture.asset(constants.kSettingIcon)),
-          SizedBox(width: 10,)
+          SizedBox(
+            width: 10,
+          )
         ],
       ),
     );

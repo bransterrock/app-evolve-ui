@@ -11,7 +11,7 @@ class FilterDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: constants.SCAFFOLD_BACKGROUND,
+      backgroundColor: constants.kScaffoldBackground,
       elevation: 10,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       title: Center(child: Text('Filter')),

@@ -24,12 +24,12 @@ class WebNavBar extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 32, horizontal: 20),
-                  child: SvgPicture.asset(constants.appEvolveLogo),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 32, horizontal: 20),
+                  child: SvgPicture.asset(constants.kAppEvolveLogo),
                 ),
                 Container(
-                  color: constants.MEDIUM_GREY,
+                  color: constants.kMediumGrey,
                   height: 1,
                   width: 200,
                 ),
@@ -40,15 +40,15 @@ class WebNavBar extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              color: constants.SUPER_DARK_BLUE,
+              color: constants.kSuperDarkBlue,
             ),
           ),
-           Container(
-             height: 6,
-              color: constants.SUPER_DARK_BLUE,
-            ),
           Container(
-            color: constants.MEDIUM_GREY,
+            height: 6,
+            color: constants.kSuperDarkBlue,
+          ),
+          Container(
+            color: constants.kMediumGrey,
             height: 1,
             width: 200,
           ),

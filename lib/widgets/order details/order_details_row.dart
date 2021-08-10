@@ -12,7 +12,7 @@ class OrderDetailsRow extends StatelessWidget {
       {required this.leadingText,
       required this.trailingText,
       this.boxColor = Colors.white,
-      this.textColor = SUPER_DARK_BLUE});
+      this.textColor = kSuperDarkBlue});
 
   @override
   Widget build(BuildContext context) {

@@ -83,22 +83,22 @@ class OrderDetailsCard extends StatelessWidget {
               ),
               Opacity(
                   opacity: 0.25,
-                  child: Divider(thickness: 1, color: constants.MEDIUM_GREY)),
+                  child: Divider(thickness: 1, color: constants.kMediumGrey)),
               OrderDetailsRow(
                   leadingText: orderDate! + ', ' + time!,
                   trailingText: deliveryLocation ?? 'No Delivery Location',
-                  textColor: constants.MEDIUM_GREY),
+                  textColor: constants.kMediumGrey),
               OrderDetailsRow(
                   leadingText: 'Client Name',
                   trailingText: clientName ?? 'No Client Name',
-                  boxColor: constants.DELIVERY_CARD_BACKGROUND),
+                  boxColor: constants.kDeliveryCardBackground),
               OrderDetailsRow(
                   leadingText: 'Client Email',
                   trailingText: clientEmail ?? 'No Client Email'),
               OrderDetailsRow(
                   leadingText: 'Delivery Company',
                   trailingText: deliveryCompany ?? 'No Delivery Company',
-                  boxColor: constants.DELIVERY_CARD_BACKGROUND),
+                  boxColor: constants.kDeliveryCardBackground),
               OrderDetailsRow(
                   leadingText: 'Tracking Code',
                   trailingText: trackingCode ?? 'No Tracking Code'),
@@ -106,14 +106,14 @@ class OrderDetailsCard extends StatelessWidget {
                   leadingText: 'Products',
                   trailingText:
                       listAllProducts(products ?? ['No Products Provided']),
-                  boxColor: constants.DELIVERY_CARD_BACKGROUND),
+                  boxColor: constants.kDeliveryCardBackground),
               OrderDetailsRow(
                   leadingText: 'Price',
                   trailingText: price ?? 'No Price Found'),
               OrderDetailsRow(
                 leadingText: 'Payment Method',
                 trailingText: paymentMethod ?? 'No Payment Method',
-                boxColor: constants.DELIVERY_CARD_BACKGROUND,
+                boxColor: constants.kDeliveryCardBackground,
               )
             ],
           ),

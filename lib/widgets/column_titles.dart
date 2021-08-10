@@ -38,8 +38,8 @@ class _ColumnHeaderTitlesState extends State<ColumnHeaderTitles> {
               children: [
                 Checkbox(
                   value: checkBoxValue,
-                  activeColor: constants.TURQUOISE,
-                  hoverColor: constants.TURQUOISE.withOpacity(0.25),
+                  activeColor: constants.kTurquoise,
+                  hoverColor: constants.kTurquoise.withOpacity(0.25),
                   splashRadius: 16,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4)),
@@ -60,7 +60,7 @@ class _ColumnHeaderTitlesState extends State<ColumnHeaderTitles> {
                     Text(
                       'CREATED',
                       style: Helper.defaultTextStyle(
-                        color: constants.SUPER_DARK_BLUE,
+                        color: constants.kSuperDarkBlue,
                         fontSize: 10,
                         fontWeight: FontWeight.w500,
                       ),
@@ -71,7 +71,7 @@ class _ColumnHeaderTitlesState extends State<ColumnHeaderTitles> {
                       children: [
                         SvgPicture.asset(
                           constants.kSortArrowUp,
-                          color: constants.MEDIUM_GREY,
+                          color: constants.kMediumGrey,
                         ),
                         SvgPicture.asset(
                           constants.kSortArrowDown,

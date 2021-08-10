@@ -26,7 +26,7 @@ class _ColumnHeaderState extends State<ColumnHeader> {
           overflow: TextOverflow.ellipsis,
           softWrap: true,
           style: Helper.defaultTextStyle(
-            color: constants.MEDIUM_GREY,
+            color: constants.kMediumGrey,
             fontSize: 10,
             fontWeight: FontWeight.w500,
           ),

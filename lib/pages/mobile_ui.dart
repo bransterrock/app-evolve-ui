@@ -23,9 +23,9 @@ class _MobileUIState extends State<MobileUI> {
   @override
   void initState() {
     super.initState();
-    filterImagePath = constants.filterLogo;
-    searchIconPath = constants.searchIcon;
-    sortIconPath = constants.sortIcon;
+    filterImagePath = constants.kFilterLogo;
+    searchIconPath = constants.kSearchIcon;
+    sortIconPath = constants.kSortIcon;
     orderDetails = OrderDetails.loadOrderDetails();
   }
 
@@ -93,7 +93,7 @@ class _MobileUIState extends State<MobileUI> {
         Opacity(
           opacity: 0.25,
           child: Divider(
-            color: constants.MEDIUM_GREY,
+            color: constants.kMediumGrey,
             height: 1,
             thickness: 1,
           ),
@@ -104,13 +104,13 @@ class _MobileUIState extends State<MobileUI> {
         Container(
           height: 30,
           child: ListView.builder(
-              itemCount: constants.filterTitles.length,
+              itemCount: constants.kFilterTitles.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return FilterHeader(
                     index: index,
-                    title: constants.filterTitles[index],
-                    numberValue: constants.filternumberValues[index],
+                    title: constants.kFilterTitles[index],
+                    numberValue: constants.kFilternumberValues[index],
                     isTapped: filterTapBooleans[index],
                     onTap: () => setState(() {
                           isButtonTapped(index);
@@ -119,24 +119,26 @@ class _MobileUIState extends State<MobileUI> {
               }),
         ),
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
-            child: ListView.builder(
-              controller: controller,
-              itemCount: orderDetails.length,
-              itemBuilder: (context, index) => OrderDetailsCard(
-                orderId: orderDetails[index].orderId,
-                orderStatus: orderDetails[index].orderStatus,
-                orderDate: orderDetails[index].orderDate,
-                time: orderDetails[index].time,
-                deliveryLocation: orderDetails[index].deliveryLocation,
-                clientName: orderDetails[index].clientName,
-                clientEmail: orderDetails[index].clientEmail,
-                deliveryCompany: orderDetails[index].deliveryCompany,
-                trackingCode: orderDetails[index].trackingCode,
-                products: orderDetails[index].products,
-                price: orderDetails[index].price,
-                paymentMethod: orderDetails[index].paymentMethod,
+          child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 20, 16, 0),
+              child: ListView.builder(
+                controller: controller,
+                itemCount: orderDetails.length,
+                itemBuilder: (context, index) => OrderDetailsCard(
+                  orderId: orderDetails[index].orderId,
+                  orderStatus: orderDetails[index].orderStatus,
+                  orderDate: orderDetails[index].orderDate,
+                  time: orderDetails[index].time,
+                  deliveryLocation: orderDetails[index].deliveryLocation,
+                  clientName: orderDetails[index].clientName,
+                  clientEmail: orderDetails[index].clientEmail,
+                  deliveryCompany: orderDetails[index].deliveryCompany,
+                  trackingCode: orderDetails[index].trackingCode,
+                  products: orderDetails[index].products,
+                  price: orderDetails[index].price,
+                  paymentMethod: orderDetails[index].paymentMethod,
+                ),
               ),
             ),
           ),

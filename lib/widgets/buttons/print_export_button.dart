@@ -39,7 +39,7 @@ class PrintExportButton extends StatelessWidget {
               style: Helper.defaultTextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
-                  color: constants.TURQUOISE),
+                  color: constants.kTurquoise),
             ),
             SizedBox(
               width: 8,
@@ -52,7 +52,7 @@ class PrintExportButton extends StatelessWidget {
                     Flexible(
                       child: SvgPicture.asset(
                         constants.kDropdownIcon,
-                        color: constants.TURQUOISE,
+                        color: constants.kTurquoise,
                       ),
                     ),
                     Flexible(child: SizedBox(width: 12)),
