@@ -22,34 +22,30 @@ class FilterButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              width: 8,
+              width: 10,
             ),
             SvgPicture.asset(leadingIconPath),
-            Spacer(flex: 1),
-            Flexible(
-              flex: 7,
-              child: Text(
-                btnText,
-                style: Helper.defaultTextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            Spacer(
-              flex: 5,
-            ),
             SizedBox(
               width: 8,
+            ),
+            Text(
+              btnText,
+              style: Helper.defaultTextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(
+              width: 5,
             ),
             Row(
               children: [
                 SvgPicture.asset(
                   constants.kDropdownIcon,
                 ),
-                SizedBox(width: 12),
               ],
             ),
+            SizedBox(width: 12,)
           ],
         ),
       ),
