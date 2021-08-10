@@ -1,6 +1,7 @@
 import 'package:app_evolve_ui/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
+///The Model used for storing the data to be presented in the ListViews
 class OrderDetails {
   String? orderId;
   OrderStatus? orderStatus;
@@ -29,6 +30,7 @@ class OrderDetails {
       this.price,
       this.paymentMethod});
 
+  ///Searhes through the data to find matching results. (Only works in Mobile View)
   static List<OrderDetails> searchFunction(
       String text, List<OrderDetails> oldOrderDetails) {
     List<OrderDetails> newOrderDetails = [];
@@ -138,32 +140,32 @@ class OrderDetails {
     switch (orderStatus) {
       case OrderStatus.PREPARING:
         {
-          colorValue = PREPARING_ICON_COLOR;
+          colorValue = kPreparingIconColor;
         }
         break;
       case OrderStatus.DELIVERED:
         {
-          colorValue = DELIVERED_ICON_COLOR;
+          colorValue = kDeliveredIconColor;
         }
         break;
       case OrderStatus.CANCELLED:
         {
-          colorValue = CANCELLED_ICON_COLOR;
+          colorValue = kCancelledIconColor;
         }
         break;
       case OrderStatus.RETURNED:
         {
-          colorValue = RETURNED_ICON_COLOR;
+          colorValue = kReturnedIconColor;
         }
         break;
       case OrderStatus.SENT:
         {
-          colorValue = SENT_ICON_COLOR;
+          colorValue = kSentIconColor;
         }
         break;
       default:
         {
-          colorValue = MEDIUM_GREY;
+          colorValue = kMediumGrey;
         }
         break;
     }
@@ -210,6 +212,7 @@ class OrderDetails {
     return orderStatus;
   }
 
+  ///Filters the order details list and passes back a result to be displayed
   static List<OrderDetails> filterFunction(
       OrderStatus orderStatus, List<OrderDetails> oldOrderDetails) {
     List<OrderDetails> newOrderDetails = [];
@@ -225,6 +228,7 @@ class OrderDetails {
     }
   }
 
+//Sorts the List by way of OrderStatus
   static List<OrderDetails> sortFunction(List<OrderDetails> oldOrderDetails) {
     List<OrderDetails> newOrderDetails = [];
     for (var orderDetail in oldOrderDetails) {
@@ -255,6 +259,7 @@ class OrderDetails {
     return newOrderDetails;
   }
 
+  ///Mock call that populates with a list of Order Details to display
   static List<OrderDetails> loadOrderDetails() {
     List<OrderDetails> orderDetails = [];
     orderDetails.add(OrderDetails(
@@ -267,7 +272,7 @@ class OrderDetails {
       clientEmail: 'c.matthews@outlook.com',
       deliveryCompany: 'DHL',
       trackingCode: '705-610844',
-      products: ['Hourglass Wallet on Chain', 'Void Butterfly Sunglasses'],
+      products: ['Hourglass Wallet on Chain, ', 'Void Butterfly Sunglasses, '],
       price: '\$2,198.03',
       paymentMethod: 'Credit Card, **** 9171',
     ));
@@ -283,9 +288,9 @@ class OrderDetails {
         deliveryCompany: 'UPS',
         trackingCode: '710-981371',
         products: [
-          'Pleated Tracksuit',
-          'Ville Supple Large Purse',
-          'Hooded Bathrobe',
+          'Pleated Tracksuit, ',
+          'Ville Supple Large Purse, ',
+          'Hooded Bathrobe, ',
           'Test Value 1',
           'Test Value 2',
           'Test Value 3',
@@ -307,9 +312,9 @@ class OrderDetails {
         deliveryCompany: 'DHL Express',
         trackingCode: '886-552845',
         products: [
-          'One Size Tracksuit',
-          'Dummy Earrings',
-          'Swift Oval Sunglasses',
+          'One Size Tracksuit, ',
+          'Dummy Earrings, ',
+          'Swift Oval Sunglasses, ',
         ],
         price: '\$3,4865,69',
         paymentMethod: 'Debit Card, **** 2756'));
@@ -340,7 +345,11 @@ class OrderDetails {
         clientEmail: 'v.kelley@msn.com',
         deliveryCompany: 'FedEx',
         trackingCode: '603-577113',
-        products: ['Hybrid Shirt Pants', 'Rhino Derby', 'Punk Tag Necklace'],
+        products: [
+          'Hybrid Shirt Pants, ',
+          'Rhino Derby, ',
+          'Punk Tag Necklace, '
+        ],
         price: '\$3,607.34.32',
         paymentMethod: 'PayPal'));
 
@@ -355,9 +364,9 @@ class OrderDetails {
         deliveryCompany: 'UPS',
         trackingCode: '716-354651',
         products: [
-          'Mask Turtleneck',
-          'Baggy Sweatpants',
-          'Sporty Hood',
+          'Mask Turtleneck, ',
+          'Baggy Sweatpants, ',
+          'Sporty Hood, ',
           'Test Value 1',
           'Test Value 2',
           'Test Value 3',
@@ -392,10 +401,10 @@ class OrderDetails {
         deliveryCompany: 'FedEx',
         trackingCode: '623-380017',
         products: [
-          'Pajama Shirt',
-          'Oversize Shorts',
-          'Tracksuit Cap',
-          'Chainmail Top'
+          'Pajama Shirt, ',
+          'Oversize Shorts, ',
+          'Tracksuit Cap, ',
+          'Chainmail Top, '
         ],
         price: '\$3,888.53',
         paymentMethod: 'Debit Card **** 6449'));
@@ -411,10 +420,10 @@ class OrderDetails {
         deliveryCompany: 'DHL',
         trackingCode: '967-202782',
         products: [
-          'Furry 80mm Sandal',
-          'Maxi Coat',
-          'Multi Dress',
-          'Body Wrap Dress',
+          'Furry 80mm Sandal, ',
+          'Maxi Coat, ',
+          'Multi Dress, ',
+          'Body Wrap Dress, ',
           'Test Value 1',
           'Test Value 2'
         ],
@@ -425,4 +434,5 @@ class OrderDetails {
   }
 }
 
+///Order Status Types
 enum OrderStatus { ALL_ORDERS, SENT, DELIVERED, CANCELLED, PREPARING, RETURNED }

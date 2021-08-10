@@ -1,4 +1,5 @@
 import 'package:app_evolve_ui/models/order_details.dart';
+import 'package:app_evolve_ui/models/orientation_type.dart';
 import 'package:app_evolve_ui/utilities/helper.dart';
 import 'package:app_evolve_ui/widgets/order%20details/order_details_row.dart';
 import 'package:app_evolve_ui/widgets/order%20details/order_status_widget.dart';
@@ -21,6 +22,7 @@ class OrderDetailsCard extends StatelessWidget {
   String? price;
   String? paymentMethod;
 
+  ///Card used to display the data in the Mobile View
   OrderDetailsCard(
       {required this.orderId,
       required this.orderStatus,
@@ -64,7 +66,7 @@ class OrderDetailsCard extends StatelessWidget {
                       backgroundColor: OrderDetails.getBtnColor(
                           orderStatus ?? OrderStatus.ALL_ORDERS),
                       child: SvgPicture.asset(
-                        constants.shoppingBagIcon,
+                        constants.kOrderIcon,
                         height: 16,
                         width: 15,
                       ),
@@ -77,28 +79,29 @@ class OrderDetailsCard extends StatelessWidget {
                             fontWeight: FontWeight.w600)),
                     Spacer(),
                     OrderStatusWidget(
+                        orientationType: OrientationType.mobile,
                         orderStatus: orderStatus ?? OrderStatus.ALL_ORDERS),
                   ],
                 ),
               ),
               Opacity(
                   opacity: 0.25,
-                  child: Divider(thickness: 1, color: constants.MEDIUM_GREY)),
+                  child: Divider(thickness: 1, color: constants.kMediumGrey)),
               OrderDetailsRow(
                   leadingText: orderDate! + ', ' + time!,
                   trailingText: deliveryLocation ?? 'No Delivery Location',
-                  textColor: constants.MEDIUM_GREY),
+                  textColor: constants.kMediumGrey),
               OrderDetailsRow(
                   leadingText: 'Client Name',
                   trailingText: clientName ?? 'No Client Name',
-                  boxColor: constants.DELIVERY_CARD_BACKGROUND),
+                  boxColor: constants.kDeliveryCardBackground),
               OrderDetailsRow(
                   leadingText: 'Client Email',
                   trailingText: clientEmail ?? 'No Client Email'),
               OrderDetailsRow(
                   leadingText: 'Delivery Company',
                   trailingText: deliveryCompany ?? 'No Delivery Company',
-                  boxColor: constants.DELIVERY_CARD_BACKGROUND),
+                  boxColor: constants.kDeliveryCardBackground),
               OrderDetailsRow(
                   leadingText: 'Tracking Code',
                   trailingText: trackingCode ?? 'No Tracking Code'),
@@ -106,14 +109,14 @@ class OrderDetailsCard extends StatelessWidget {
                   leadingText: 'Products',
                   trailingText:
                       listAllProducts(products ?? ['No Products Provided']),
-                  boxColor: constants.DELIVERY_CARD_BACKGROUND),
+                  boxColor: constants.kDeliveryCardBackground),
               OrderDetailsRow(
                   leadingText: 'Price',
                   trailingText: price ?? 'No Price Found'),
               OrderDetailsRow(
                 leadingText: 'Payment Method',
                 trailingText: paymentMethod ?? 'No Payment Method',
-                boxColor: constants.DELIVERY_CARD_BACKGROUND,
+                boxColor: constants.kDeliveryCardBackground,
               )
             ],
           ),

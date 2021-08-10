@@ -12,12 +12,12 @@ class OrderDetailsRow extends StatelessWidget {
       {required this.leadingText,
       required this.trailingText,
       this.boxColor = Colors.white,
-      this.textColor = SUPER_DARK_BLUE});
+      this.textColor = kSuperDarkBlue});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8.5),
+      padding: const EdgeInsets.all(7.8),
       decoration: BoxDecoration(
           color: boxColor, borderRadius: BorderRadius.circular(4)),
       child: Column(

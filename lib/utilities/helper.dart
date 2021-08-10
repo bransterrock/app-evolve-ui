@@ -6,7 +6,7 @@ class Helper {
       {double fontSize = 20,
       FontWeight fontWeight = FontWeight.w700,
       FontStyle fontStyle = FontStyle.normal,
-      Color color = MEDIUM_GREY}) {
+      Color color = kMediumGrey}) {
     return TextStyle(
         fontFamily: 'Manrope',
         fontSize: fontSize,
