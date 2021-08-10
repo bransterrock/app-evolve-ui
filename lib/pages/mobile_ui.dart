@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:app_evolve_ui/widgets/order%20details/order_details_card.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 
+// ignore: must_be_immutable
 class MobileUI extends StatefulWidget {
+  MobileUI();
   @override
   _MobileUIState createState() => _MobileUIState();
 }
@@ -29,6 +31,7 @@ class _MobileUIState extends State<MobileUI> {
     orderDetails = OrderDetails.loadOrderDetails();
   }
 
+  ///Determines what action is taken based on what filter header button was tapped
   isButtonTapped(int index, [bool sortWasTapped = false]) {
     // ignore: unused_local_variable
     for (int taps = 0; taps < filterTapBooleans.length; ++taps) {

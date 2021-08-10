@@ -1,16 +1,22 @@
-# app_evolve_ui
+# App Evolve UI Test
 
-A new Flutter project.
+This repository was created to assess the creation of a **mobile** and **web** view in Flutter based off a Figma Design.
 
-## Getting Started
+## How to Run
 
-This project is a starting point for a Flutter application.
+1. Clone the repo.
+2. run ```flutter channel stable```
+2. run ```flutter pub get```
+3. run ```flutter run```
 
-A few resources to get you started if this is your first Flutter project:
+This repo is using **flutter channel stable**
+## Points to Note
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+1. There is partial functionality for the mobile view such as **sort**, **filter**, and **search**, however there is none for the web and that is just pure design.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. The phone design was from a iPhone 11 Pro. I dont have that device but I managed to test to ensure the **SafeArea** and the **AppBar** were in accordance to specifcations.
+
+3. The Display resolution for the web design was a 1440 resolution. My Display resolution is 1920 x 1080 which scales up closely however minor discrepancies might occur however I **Flexed** as much as possible to allow for smaller/larger devices to be used. In a full project, the use of UI Testing will overcome this shortcoming as it is.
+
+4. Figma has been found to not convert fully pixel for pixel in the the flutter frame work. I have come accross some plugins that should help with this in future projects (if I am hired that is :D).
+

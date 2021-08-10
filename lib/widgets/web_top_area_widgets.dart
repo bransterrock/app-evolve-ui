@@ -8,6 +8,7 @@ import 'package:app_evolve_ui/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 
+///Compilation of widgets that make up the top section above the data table.
 class WebTopAreaWidgets extends StatefulWidget {
   const WebTopAreaWidgets({Key? key}) : super(key: key);
 

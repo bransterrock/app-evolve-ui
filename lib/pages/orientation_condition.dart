@@ -1,3 +1,4 @@
+import 'package:app_evolve_ui/models/orientation_type.dart';
 import 'package:app_evolve_ui/pages/mobile_ui.dart';
 import 'package:app_evolve_ui/pages/web_ui.dart';
 import 'package:app_evolve_ui/widgets/scaffold%20widgets/mobile_appbar.dart';
@@ -13,6 +14,7 @@ class OrientationCondition extends StatefulWidget {
 class _OrientationConditionState extends State<OrientationCondition> {
   String? image = '';
   String? logoPath = '';
+  OrientationType? orientationType = OrientationType.mobile;
 
   @override
   void initState() {
@@ -24,6 +26,11 @@ class _OrientationConditionState extends State<OrientationCondition> {
   @override
   Widget build(BuildContext context) {
     return OrientationBuilder(builder: (context, orientation) {
+      if (orientation == Orientation.portrait) {
+        orientationType = OrientationType.mobile;
+      } else {
+        orientationType = OrientationType.web;
+      }
       return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: orientation == Orientation.portrait

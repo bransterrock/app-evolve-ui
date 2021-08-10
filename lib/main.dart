@@ -4,10 +4,13 @@ import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: constants.kSuperDarkBlue,
     statusBarBrightness: Brightness.dark,
   ));
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(MyApp());
 }
 

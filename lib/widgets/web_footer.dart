@@ -15,7 +15,13 @@ class WebFooter extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('1-20 of 294'),
+          Text(
+            '1-20 of 294',
+            style: Helper.defaultTextStyle(
+                color: Theme.of(context).primaryColor,
+                fontSize: 14,
+                fontWeight: FontWeight.w400),
+          ),
           Container(
             height: 40,
             alignment: Alignment.center,
@@ -29,7 +35,7 @@ class WebFooter extends StatelessWidget {
               children: [
                 SizedBox(width: 20),
                 Text(
-                  'Next Row',
+                  'Next Page',
                   style: Helper.defaultTextStyle(
                       color: Colors.white,
                       fontSize: 14,
@@ -41,7 +47,7 @@ class WebFooter extends StatelessWidget {
                   height: 16,
                   width: 11,
                 ),
-                SizedBox(width: 12),
+                SizedBox(width: 16),
               ],
             ),
           ),

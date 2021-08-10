@@ -1,4 +1,5 @@
 import 'package:app_evolve_ui/models/order_details.dart';
+import 'package:app_evolve_ui/models/orientation_type.dart';
 import 'package:app_evolve_ui/utilities/helper.dart';
 import 'package:app_evolve_ui/widgets/order%20details/order_details_row.dart';
 import 'package:app_evolve_ui/widgets/order%20details/order_status_widget.dart';
@@ -21,6 +22,7 @@ class OrderDetailsCard extends StatelessWidget {
   String? price;
   String? paymentMethod;
 
+  ///Card used to display the data in the Mobile View
   OrderDetailsCard(
       {required this.orderId,
       required this.orderStatus,
@@ -77,6 +79,7 @@ class OrderDetailsCard extends StatelessWidget {
                             fontWeight: FontWeight.w600)),
                     Spacer(),
                     OrderStatusWidget(
+                        orientationType: OrientationType.mobile,
                         orderStatus: orderStatus ?? OrderStatus.ALL_ORDERS),
                   ],
                 ),

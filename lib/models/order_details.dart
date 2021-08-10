@@ -1,6 +1,7 @@
 import 'package:app_evolve_ui/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
+///The Model used for storing the data to be presented in the ListViews
 class OrderDetails {
   String? orderId;
   OrderStatus? orderStatus;
@@ -29,6 +30,7 @@ class OrderDetails {
       this.price,
       this.paymentMethod});
 
+  ///Searhes through the data to find matching results. (Only works in Mobile View)
   static List<OrderDetails> searchFunction(
       String text, List<OrderDetails> oldOrderDetails) {
     List<OrderDetails> newOrderDetails = [];
@@ -210,6 +212,7 @@ class OrderDetails {
     return orderStatus;
   }
 
+  ///Filters the order details list and passes back a result to be displayed
   static List<OrderDetails> filterFunction(
       OrderStatus orderStatus, List<OrderDetails> oldOrderDetails) {
     List<OrderDetails> newOrderDetails = [];
@@ -225,6 +228,7 @@ class OrderDetails {
     }
   }
 
+//Sorts the List by way of OrderStatus
   static List<OrderDetails> sortFunction(List<OrderDetails> oldOrderDetails) {
     List<OrderDetails> newOrderDetails = [];
     for (var orderDetail in oldOrderDetails) {
@@ -255,6 +259,7 @@ class OrderDetails {
     return newOrderDetails;
   }
 
+  ///Mock call that populates with a list of Order Details to display
   static List<OrderDetails> loadOrderDetails() {
     List<OrderDetails> orderDetails = [];
     orderDetails.add(OrderDetails(
@@ -429,4 +434,5 @@ class OrderDetails {
   }
 }
 
+///Order Status Types
 enum OrderStatus { ALL_ORDERS, SENT, DELIVERED, CANCELLED, PREPARING, RETURNED }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 import 'package:flutter_svg/flutter_svg.dart';
 
+///The Profile Card for the footer of the navbar.
 class ProfileNavBarWidget extends StatelessWidget {
   const ProfileNavBarWidget({
     Key? key,

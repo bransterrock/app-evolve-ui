@@ -3,6 +3,7 @@ import 'package:app_evolve_ui/utilities/helper.dart';
 import 'package:flutter/material.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 
+///Simple Dialog that shows when filter button is pressed in mobile view
 // ignore: must_be_immutable
 class FilterDialog extends StatelessWidget {
   OrderStatus orderStatus;

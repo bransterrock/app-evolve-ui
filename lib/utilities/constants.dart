@@ -100,10 +100,10 @@ const List<String> kNavBarIconPaths = [
   kDiscountVoucherIcon,
   kReportIcon,
   kSupportIcon,
-  '',
-  '',
-  '',
-  '',
-  '',
+  kSupportIcon,
+  kSupportIcon,
+  kSupportIcon,
+  kSupportIcon,
+  kSupportIcon,
 ];
 const List<int> kFilternumberValues = [294, 12, 77, 14, 16, 134];

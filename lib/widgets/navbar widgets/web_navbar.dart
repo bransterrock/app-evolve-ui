@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 
+///The Nav Bar displyed in the Web View
 class WebNavBar extends StatelessWidget {
   const WebNavBar({
     Key? key,

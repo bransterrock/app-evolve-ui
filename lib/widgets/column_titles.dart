@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 import 'package:flutter_svg/flutter_svg.dart';
 
+///Header Widget to be displayed in the table for the Web View
 class ColumnHeaderTitles extends StatefulWidget {
   const ColumnHeaderTitles({Key? key}) : super(key: key);
 

@@ -11,6 +11,8 @@ class FilterHeader extends StatefulWidget {
   int index;
   OrientationType orientationType;
   Function onTap;
+
+  ///Filter Headers that onTap(), filters for the type selected.(Only available in the Mobile View)
   FilterHeader(
       {required this.title,
       required this.numberValue,

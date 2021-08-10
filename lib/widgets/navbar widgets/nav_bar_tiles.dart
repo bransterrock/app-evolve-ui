@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 
+///Navbar List Tiles
 class NavBarTiles extends StatefulWidget {
   NavBarTiles();
 
@@ -38,8 +39,12 @@ class _NavBarTilesState extends State<NavBarTiles> {
                     contentPadding: const EdgeInsets.only(top: 8),
                     leading: Padding(
                       padding: const EdgeInsets.only(left: 12),
-                      child:
-                          SvgPicture.asset(constants.kNavBarIconPaths[index]),
+                      child: SvgPicture.asset(
+                        constants.kNavBarIconPaths[index],
+                        color: constants.kNavBarTitles[index].isEmpty
+                            ? Theme.of(context).primaryColor
+                            : null,
+                      ),
                     ),
                     horizontalTitleGap: 10,
                     title: Text(

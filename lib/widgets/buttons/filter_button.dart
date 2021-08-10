@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:app_evolve_ui/utilities/constants.dart' as constants;
 
+///Buttons that make up the Header beside the search bar.
 // ignore: must_be_immutable
 class FilterButton extends StatelessWidget {
   String leadingIconPath;
