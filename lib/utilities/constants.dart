@@ -64,6 +64,8 @@ const String kSortArrowUp = '$iconPath/sort_arrow_up.svg';
 const String kSortArrowDown = '$iconPath/sort_arrow_down.svg';
 const String kDotMenuIcon = '$iconPath/dots_menu.svg';
 
+const String kArrowIcon = '$iconPath/arrow.svg';
+
 //Filter Header Widget Values
 const List<String> filterTitles = [
   'All Orders',

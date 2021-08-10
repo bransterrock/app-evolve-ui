@@ -55,6 +55,8 @@ class _WebTopAreaWidgetsState extends State<WebTopAreaWidgets> {
                             flex: 1,
                             child: Text(
                               'Orders',
+                              maxLines: 1,
+                              overflow: TextOverflow.clip,
                               style: Helper.defaultTextStyle(
                                   fontSize: 28,
                                   fontWeight: FontWeight.w700,
