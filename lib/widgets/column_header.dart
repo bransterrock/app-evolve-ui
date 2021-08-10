@@ -7,9 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 // ignore: must_be_immutable
 class ColumnHeader extends StatefulWidget {
   String text = '';
-   ColumnHeader({
-    required this.text
-  });
+  ColumnHeader({required this.text});
 
   @override
   _ColumnHeaderState createState() => _ColumnHeaderState();
@@ -19,22 +17,30 @@ class _ColumnHeaderState extends State<ColumnHeader> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Text(
           widget.text,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          softWrap: true,
           style: Helper.defaultTextStyle(
             color: constants.MEDIUM_GREY,
             fontSize: 10,
             fontWeight: FontWeight.w500,
           ),
         ),
-        SizedBox(
-          width: 4,
+        Flexible(
+          child: SizedBox(
+            width: 4,
+          ),
         ),
-        SvgPicture.asset(
-          constants.kSortArrowIcon,
-          color: constants.kArrowGrayColor,
+        Flexible(
+          child: SvgPicture.asset(
+            constants.kSortArrowIcon,
+            color: constants.kArrowGrayColor,
+          ),
         )
       ],
     );

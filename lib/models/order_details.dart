@@ -267,7 +267,7 @@ class OrderDetails {
       clientEmail: 'c.matthews@outlook.com',
       deliveryCompany: 'DHL',
       trackingCode: '705-610844',
-      products: ['Hourglass Wallet on Chain', 'Void Butterfly Sunglasses'],
+      products: ['Hourglass Wallet on Chain, ', 'Void Butterfly Sunglasses, '],
       price: '\$2,198.03',
       paymentMethod: 'Credit Card, **** 9171',
     ));
@@ -283,9 +283,9 @@ class OrderDetails {
         deliveryCompany: 'UPS',
         trackingCode: '710-981371',
         products: [
-          'Pleated Tracksuit',
-          'Ville Supple Large Purse',
-          'Hooded Bathrobe',
+          'Pleated Tracksuit, ',
+          'Ville Supple Large Purse, ',
+          'Hooded Bathrobe, ',
           'Test Value 1',
           'Test Value 2',
           'Test Value 3',
@@ -307,9 +307,9 @@ class OrderDetails {
         deliveryCompany: 'DHL Express',
         trackingCode: '886-552845',
         products: [
-          'One Size Tracksuit',
-          'Dummy Earrings',
-          'Swift Oval Sunglasses',
+          'One Size Tracksuit, ',
+          'Dummy Earrings, ',
+          'Swift Oval Sunglasses, ',
         ],
         price: '\$3,4865,69',
         paymentMethod: 'Debit Card, **** 2756'));
@@ -340,7 +340,7 @@ class OrderDetails {
         clientEmail: 'v.kelley@msn.com',
         deliveryCompany: 'FedEx',
         trackingCode: '603-577113',
-        products: ['Hybrid Shirt Pants', 'Rhino Derby', 'Punk Tag Necklace'],
+        products: ['Hybrid Shirt Pants, ', 'Rhino Derby, ', 'Punk Tag Necklace, '],
         price: '\$3,607.34.32',
         paymentMethod: 'PayPal'));
 
@@ -355,9 +355,9 @@ class OrderDetails {
         deliveryCompany: 'UPS',
         trackingCode: '716-354651',
         products: [
-          'Mask Turtleneck',
-          'Baggy Sweatpants',
-          'Sporty Hood',
+          'Mask Turtleneck, ',
+          'Baggy Sweatpants, ',
+          'Sporty Hood, ',
           'Test Value 1',
           'Test Value 2',
           'Test Value 3',
@@ -392,10 +392,10 @@ class OrderDetails {
         deliveryCompany: 'FedEx',
         trackingCode: '623-380017',
         products: [
-          'Pajama Shirt',
-          'Oversize Shorts',
-          'Tracksuit Cap',
-          'Chainmail Top'
+          'Pajama Shirt, ',
+          'Oversize Shorts, ',
+          'Tracksuit Cap, ',
+          'Chainmail Top, '
         ],
         price: '\$3,888.53',
         paymentMethod: 'Debit Card **** 6449'));
@@ -411,10 +411,10 @@ class OrderDetails {
         deliveryCompany: 'DHL',
         trackingCode: '967-202782',
         products: [
-          'Furry 80mm Sandal',
-          'Maxi Coat',
-          'Multi Dress',
-          'Body Wrap Dress',
+          'Furry 80mm Sandal, ',
+          'Maxi Coat, ',
+          'Multi Dress, ',
+          'Body Wrap Dress, ',
           'Test Value 1',
           'Test Value 2'
         ],

@@ -62,6 +62,7 @@ const String kDistribution = '$iconPath/distribution.svg';
 const String kSortArrowIcon = '$iconPath/sort_arrows.svg';
 const String kSortArrowUp = '$iconPath/sort_arrow_up.svg';
 const String kSortArrowDown = '$iconPath/sort_arrow_down.svg';
+const String kDotMenuIcon = '$iconPath/dots_menu.svg';
 
 //Filter Header Widget Values
 const List<String> filterTitles = [
