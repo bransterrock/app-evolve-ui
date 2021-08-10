@@ -61,7 +61,7 @@ class _OrderDetailsTableState extends State<OrderDetailsTable> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 25, 20, 0),
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
       child: Table(
         defaultVerticalAlignment: TableCellVerticalAlignment.middle,
         defaultColumnWidth: FixedColumnWidth(150.0),
@@ -82,30 +82,33 @@ class _OrderDetailsTableState extends State<OrderDetailsTable> {
                   boxShadow: checkBoxValue ?? false
                       ? [
                           BoxShadow(
-                            blurRadius: 3,
-                            color: constants.kMediumGrey,
-                            spreadRadius: 0.2,
+                            blurRadius: 9,
+                            color: constants.kMediumGrey.withOpacity(0.2),
+                            spreadRadius: 0.3,
                           ),
                         ]
                       : null,
                   borderRadius: BorderRadius.circular(4)),
               children: [
-                Checkbox(
-                  value: checkBoxValue,
-                  activeColor: constants.kTurquoise,
-                  hoverColor: constants.kTurquoise.withOpacity(0.25),
-                  splashRadius: 16,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4)),
-                  side: BorderSide(
-                      style: BorderStyle.solid,
-                      color: constants.kLightGrayColor,
-                      width: 9),
-                  onChanged: (value) {
-                    setState(() {
-                      checkBoxValue = value;
-                    });
-                  },
+                Transform.scale(
+                  scale: 1.2,
+                  child: Checkbox(
+                    value: checkBoxValue,
+                    activeColor: constants.kTurquoise,
+                    hoverColor: constants.kTurquoise.withOpacity(0.25),
+                    splashRadius: 16,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4)),
+                    side: BorderSide(
+                        style: BorderStyle.solid,
+                        color: constants.kLightGrayColor,
+                        width: 9),
+                    onChanged: (value) {
+                      setState(() {
+                        checkBoxValue = value;
+                      });
+                    },
+                  ),
                 ),
                 Text(
                   widget.orderDetails.orderId ?? 'No Order ID',

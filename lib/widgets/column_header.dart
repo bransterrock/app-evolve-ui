@@ -16,33 +16,36 @@ class ColumnHeader extends StatefulWidget {
 class _ColumnHeaderState extends State<ColumnHeader> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      //mainAxisAlignment: MainAxisAlignment.spaceAround,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          widget.text,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          softWrap: true,
-          style: Helper.defaultTextStyle(
-            color: constants.kMediumGrey,
-            fontSize: 10,
-            fontWeight: FontWeight.w500,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 15),
+      child: Row(
+        //mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            widget.text,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            softWrap: true,
+            style: Helper.defaultTextStyle(
+              color: constants.kMediumGrey,
+              fontSize: 10,
+              fontWeight: FontWeight.w500,
+            ),
           ),
-        ),
-        Flexible(
-          child: SizedBox(
-            width: 4,
+          Flexible(
+            child: SizedBox(
+              width: 4,
+            ),
           ),
-        ),
-        Flexible(
-          child: SvgPicture.asset(
-            constants.kSortArrowIcon,
-            color: constants.kArrowGrayColor,
-          ),
-        )
-      ],
+          Flexible(
+            child: SvgPicture.asset(
+              constants.kSortArrowIcon,
+              color: constants.kArrowGrayColor,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

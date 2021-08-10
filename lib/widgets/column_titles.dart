@@ -37,22 +37,25 @@ class _ColumnHeaderTitlesState extends State<ColumnHeaderTitles> {
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(4)),
               children: [
-                Checkbox(
-                  value: checkBoxValue,
-                  activeColor: constants.kTurquoise,
-                  hoverColor: constants.kTurquoise.withOpacity(0.25),
-                  splashRadius: 16,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4)),
-                  side: BorderSide(
-                      style: BorderStyle.solid,
-                      color: constants.kLightGrayColor,
-                      width: 9),
-                  onChanged: (value) {
-                    setState(() {
-                      checkBoxValue = value;
-                    });
-                  },
+                Transform.scale(
+                  scale: 1.2,
+                  child: Checkbox(
+                    value: checkBoxValue,
+                    activeColor: constants.kTurquoise,
+                    hoverColor: constants.kTurquoise.withOpacity(0.25),
+                    splashRadius: 16,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4)),
+                    side: BorderSide(
+                        style: BorderStyle.solid,
+                        color: constants.kLightGrayColor,
+                        width: 9),
+                    onChanged: (value) {
+                      setState(() {
+                        checkBoxValue = value;
+                      });
+                    },
+                  ),
                 ),
                 ColumnHeader(text: 'ORDER NO.'),
                 Row(

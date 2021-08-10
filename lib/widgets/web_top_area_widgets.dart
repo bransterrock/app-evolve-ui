@@ -68,16 +68,10 @@ class _WebTopAreaWidgetsState extends State<WebTopAreaWidgets> {
               Spacer(
                 flex: 13,
               ),
-              Flexible(
-                flex: 1,
-                child: PrintExportButton(
-                    btnText: 'Print', iconPath: constants.kPrintIcon),
-              ),
-              Flexible(
-                flex: 1,
-                child: PrintExportButton(
-                    btnText: 'Export', iconPath: constants.kExportIcon),
-              ),
+              PrintExportButton(
+                  btnText: 'Print', iconPath: constants.kPrintIcon),
+              PrintExportButton(
+                  btnText: 'Export', iconPath: constants.kExportIcon),
             ],
           ),
         ),
@@ -129,11 +123,11 @@ class _WebTopAreaWidgetsState extends State<WebTopAreaWidgets> {
           padding: const EdgeInsets.only(top: 16),
           child: Divider(
             color: constants.kMediumGrey,
-            thickness: 1,
+            thickness: 0.3,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(5, 20, 30, 0),
+          padding: const EdgeInsets.fromLTRB(5, 15, 30, 0),
           child: Container(
             height: 30,
             child: ListView.builder(
