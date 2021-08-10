@@ -17,90 +17,81 @@ class _ColumnHeaderTitlesState extends State<ColumnHeaderTitles> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.fromLTRB(20, 25, 20, 0),
-        child: Container(
-          height: 40,
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(4)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: 30,
-              ),
-              Checkbox(
-                value: checkBoxValue,
-                activeColor: constants.TURQUOISE,
-                hoverColor: constants.TURQUOISE.withOpacity(0.25),
-                splashRadius: 16,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4)),
-                side: BorderSide(
-                    style: BorderStyle.solid,
-                    color: constants.kLightGrayColor,
-                    width: 9),
-                onChanged: (value) {
-                  setState(() {
-                    checkBoxValue = value;
-                  });
-                },
-              ),
-              SizedBox(
-                width: 56,
-              ),
-              ColumnHeader(text: 'ORDER NO.'),
-              SizedBox(
-                width: 60,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'CREATED',
-                    style: Helper.defaultTextStyle(
-                      color: constants.SUPER_DARK_BLUE,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
+      padding: const EdgeInsets.fromLTRB(20, 25, 20, 0),
+      child: Table(
+        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+        defaultColumnWidth: FixedColumnWidth(150.0),
+        columnWidths: {
+          0: FlexColumnWidth(2),
+          1: FlexColumnWidth(3),
+          2: FlexColumnWidth(3),
+          3: FlexColumnWidth(4),
+          4: FlexColumnWidth(6),
+          5: FlexColumnWidth(2.9),
+          6: FlexColumnWidth(2.2),
+          10: FlexColumnWidth(1),
+        },
+        children: [
+          TableRow(
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(4)),
+              children: [
+                Checkbox(
+                  value: checkBoxValue,
+                  activeColor: constants.TURQUOISE,
+                  hoverColor: constants.TURQUOISE.withOpacity(0.25),
+                  splashRadius: 16,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4)),
+                  side: BorderSide(
+                      style: BorderStyle.solid,
+                      color: constants.kLightGrayColor,
+                      width: 9),
+                  onChanged: (value) {
+                    setState(() {
+                      checkBoxValue = value;
+                    });
+                  },
+                ),
+                ColumnHeader(text: 'ORDER NO.'),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'CREATED',
+                      style: Helper.defaultTextStyle(
+                        color: constants.SUPER_DARK_BLUE,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                  ),
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SvgPicture.asset(
-                        constants.kSortArrowUp,
-                        color: constants.MEDIUM_GREY,
-                      ),
-                      SvgPicture.asset(
-                        constants.kSortArrowDown,
-                        color: constants.kArrowGrayColor,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 63,
-              ),
-              ColumnHeader(text: 'CLIENT'),
-              SizedBox(
-                width: 244,
-              ),
-              ColumnHeader(text: 'PRODUCTS'),
-              SizedBox(
-                width: 212,
-              ),
-              ColumnHeader(text: 'DISTRIBUTION'),
-              SizedBox(width: 90,),
-              ColumnHeader(text: 'STATUS'),
-              SizedBox(width: 147,),
-              ColumnHeader(text: 'TRACKING'),
-              SizedBox(width: 65,),
-              ColumnHeader(text: 'PRICE'),
-              SizedBox(width: 73,),
-              ColumnHeader(text: 'PAYMENT'),
-            ],
-          ),
-        ));
+                    SizedBox(width: 6),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SvgPicture.asset(
+                          constants.kSortArrowUp,
+                          color: constants.MEDIUM_GREY,
+                        ),
+                        SvgPicture.asset(
+                          constants.kSortArrowDown,
+                          color: constants.kArrowGrayColor,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                ColumnHeader(text: 'CLIENT'),
+                ColumnHeader(text: 'PRODUCTS'),
+                ColumnHeader(text: 'DISTRIBUTION'),
+                ColumnHeader(text: 'STATUS'),
+                ColumnHeader(text: 'TRACKING'),
+                ColumnHeader(text: 'PRICE'),
+                ColumnHeader(text: 'PAYMENT'),
+                SizedBox(width: 3),
+              ]),
+        ],
+      ),
+    );
   }
 }

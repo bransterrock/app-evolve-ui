@@ -11,12 +11,11 @@ class NavBarTiles extends StatefulWidget {
 }
 
 class _NavBarTilesState extends State<NavBarTiles> {
-  int selectedIndex = constants.kNavBarTitles.length;
+  int selectedIndex = 1;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
         itemCount: constants.kNavBarTitles.length,
-        physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) => Stack(children: [
               Visibility(
                 visible: index == selectedIndex,
