@@ -1,4 +1,4 @@
-# Responseive UI Test (Mobile & Web View Responsiveness)
+# Responseive UI Sample (Mobile & Web View Responsiveness)
 
 This repository was created to assess the creation of a **mobile** and **web** view in Flutter based off a Figma Design.
 
